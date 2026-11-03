@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#79574e","background":"#fcf9f4","on-surface-variant":"#58423a","surface-container-lowest":"#ffffff","on-primary-container":"#fffbff","on-error-container":"#93000a","surface-container-low":"#f6f3ee","on-surface":"#1c1c19","on-primary":"#ffffff","inverse-on-surface":"#f3f0eb","tertiary-fixed-dim":"#f2be71","surface-tint":"#a83900","tertiary-fixed":"#ffddb1","on-tertiary-fixed-variant":"#614000","surface-container-high":"#ebe8e3","surface-dim":"#dcdad5","on-secondary-fixed-variant":"#5e3f37","on-tertiary-fixed":"#291800","primary":"#a43700","error-container":"#ffdad6","tertiary":"#7b5410","secondary-container":"#fed0c5","surface-container":"#f0ede9","primary-fixed-dim":"#ffb59a","surface":"#fcf9f4","on-primary-fixed-variant":"#802900","surface-variant":"#e5e2dd","surface-container-highest":"#e5e2dd","on-tertiary":"#ffffff","outline":"#8c7168","inverse-surface":"#31302d","secondary-fixed":"#ffdad2","on-secondary-fixed":"#2d150f","on-tertiary-container":"#fffbff","secondary":"#78564e","inverse-primary":"#ffb59a","primary-fixed":"#ffdbcf","error":"#ba1a1a","secondary-fixed-dim":"#e9bcb2","on-primary-fixed":"#380d00","on-error":"#ffffff","surface-bright":"#fcf9f4","on-secondary":"#ffffff","primary-container":"#c74e19","outline-variant":"#e0c0b5","on-background":"#1c1c19","tertiary-container":"#976d28"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-desktop":"2rem","space-2xl":"3rem","space-sm":"0.75rem","space-2xs":"0.25rem","space-4xl":"6rem","space-3xs":"0.125rem","space-xs":"0.5rem","space-lg":"1.5rem","space-xl":"2rem","gutter-mobile":"1.25rem","container-max":"1360px","space-md":"1rem","space-5xl":"8rem","space-3xl":"4rem"},fontFamily:{"label-md":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"label-sm":["Plus Jakarta Sans"],"headline-lg":["Playfair Display"],"display-xl":["Playfair Display"],"display-xl-mobile":["Playfair Display"],"body-md":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"body-xl":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Playfair Display"],"body-lg":["Plus Jakarta Sans"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"600"}],"headline-md":["28px",{lineHeight:"34px",fontWeight:"500"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-xl":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"600"}],"display-xl-mobile":["38px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-sm":["22px",{lineHeight:"28px",fontWeight:"500"}],"body-xl":["20px",{lineHeight:"32px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.04em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-lg-mobile":["30px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- Top Brand Header / Public Navigation -->
+<header class="sticky top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_2px_12px_rgba(44,20,14,0.03)]">
+<!-- Subtle top bar with concierge hotline & currency -->
+<div class="bg-surface-container-low px-gutter-desktop py-1 border-b border-outline-variant/20 hidden md:block">
+<div class="max-w-container-max mx-auto flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-space-3xs">
+<span class="material-symbols-outlined text-[14px] text-primary">call</span>
+<span>East Africa Concierge: <strong class="text-on-surface font-semibold">+250 788 123 456 / +254 711 987 654</strong></span>
+</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-3xs text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 inline-block animate-pulse"></span>
+<span>Desks Live in Kigali, Nairobi &amp; Entebbe</span>
+</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-3xs">
+<span class="text-on-surface-variant">Currency:</span>
+<span class="font-bold text-on-surface">USD ($)</span>
+</div>
+<span class="text-outline-variant">|</span>
+<a class="hover:text-primary transition-colors" href="#matrix">100% Impact Audited</a>
+</div>
+</div>
+</div>
+<!-- Main Navbar -->
+<div class="max-w-container-max mx-auto px-gutter-desktop py-space-sm flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-space-xs group" href="#">
+<img alt="AMAJO - Essence of Africa" class="h-12 w-auto object-contain transition-transform group-hover:scale-105 duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI28XtIQo7E06hiaCENvoDyFVKJ5W9kxog8BV-aaC6J2YyzzKZGdE7-oCdEMbcN4rCeS4S42bh-QmiI-wlJg6SLwPBksGIbs7V668FTxruLHWyka0EXo13cFsgCS2sbpjUiOFo5AIlL_WY77IbiQ1NR6Jr_aGMiuazt0eLCqWZZU_YkPCG_gvB0H2zGzv8-yDYNai6uVi0EM_9IAhn0QawpSlclSxo6_u97e9kBvKzQXRC03kMNJeIp3i2wr4GZMpwzg"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm tracking-wider uppercase text-on-surface leading-tight font-semibold">AMAJO</span>
+<span class="font-label-sm text-[9px] text-primary uppercase tracking-[0.25em] -mt-1 font-bold">Essence of Africa</span>
+</div>
+</a>
+<!-- Nav Links -->
+<nav class="hidden xl:flex items-center gap-space-lg font-label-md text-label-md tracking-wider">
+<a class="text-on-surface hover:text-primary transition-colors uppercase" href="#">Destinations</a>
+<a class="text-on-surface hover:text-primary transition-colors uppercase" href="#">Curated Safaris</a>
+<a class="text-on-surface hover:text-primary transition-colors uppercase" href="#">Gorilla Trekking</a>
+<a class="text-on-surface hover:text-primary transition-colors uppercase" href="#">Experiences</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-0.5 uppercase" href="#">About Us</a>
+<a class="text-on-surface hover:text-primary transition-colors uppercase" href="#">Journal</a>
+</nav>
+<!-- Header Actions -->
+<div class="flex items-center gap-space-sm">
+<a class="hidden sm:inline-flex items-center gap-space-3xs text-on-surface-variant hover:text-primary font-label-md text-label-md px-space-xs py-space-3xs" href="#contact">
+<span class="material-symbols-outlined text-[18px]">chat_bubble_outline</span>
+<span>Inquire</span>
+</a>
+<a class="bg-primary hover:bg-primary-container text-on-primary px-space-md py-space-xs rounded-lg font-label-md text-label-md flex items-center gap-space-2xs shadow-[0_2px_8px_rgba(44,20,14,0.12)] hover:shadow-md transition-all uppercase tracking-wider" href="#contact">
+<span>Plan Your Journey</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full pb-space-2xl bg-surface"><div class="flex flex-col w-full">
+<!-- Top Ambient Glow Decorator -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[320px] bg-gradient-to-b from-primary/10 via-tertiary-fixed-dim/20 to-transparent blur-3xl pointer-events-none -z-10"></div>
+<!-- 1. Editorial Hero Banner -->
+<section class="relative pt-space-2xl pb-space-2xl flex flex-col items-center text-center max-w-container-max mx-auto px-space-md">
+<div class="inline-flex items-center gap-space-2xs px-space-sm py-space-3xs rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm uppercase tracking-widest shadow-sm mb-space-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span>Visionary Conservation &amp; Heritage</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-on-surface tracking-tight max-w-4xl mx-auto leading-tight">
+        Rooted in the Soil, Guardians of the Wild
+      </h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-3xl mt-space-md leading-relaxed font-light">
+        AMAJO was conceived not as an overseas travel broker, but as an indigenous East African conservation collective operating directly from Kigali, Nairobi, and Kampala. We craft transformational journeys that directly fund the survival of Earth's most endangered wildlife and sovereign ecosystems.
+      </p>
+<!-- Trust Milestones Ribbon -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm w-full mt-space-2xl">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm text-left flex flex-col justify-between hover:shadow-md transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-[28px] mb-space-xs">history_edu</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">2012</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-space-3xs">Established in Kigali &amp; Nairobi</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm text-left flex flex-col justify-between hover:shadow-md transition-all duration-300">
+<span class="material-symbols-outlined text-tertiary text-[28px] mb-space-xs">badge</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">100%</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-space-3xs">Native East African Naturalists</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm text-left flex flex-col justify-between hover:shadow-md transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-[28px] mb-space-xs">forest</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">$2.4M+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-space-3xs">Direct Habitat &amp; Ranger Royalties</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm text-left flex flex-col justify-between hover:shadow-md transition-all duration-300">
+<span class="material-symbols-outlined text-secondary text-[28px] mb-space-xs">verified_user</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Certified</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-space-3xs">ATTA Fellow • RDB • KWS</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Genesis Story: Asymmetric Split Editorial -->
+<section class="max-w-container-max mx-auto px-space-md py-space-3xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+<!-- Story text -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Genesis &amp; Provenance</span>
+<span class="h-px w-12 bg-outline-variant"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+            Born Under the Volcanic Canopy, Raised on Savannah Whispers
+          </h2>
+<div class="space-y-space-md font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<p>
+              Before AMAJO existed on international maps, its founders walked the damp trails of Volcanoes National Park and the cracked sunbeds of the Great Rift Valley. They carried notebooks, tracking lines passed down through four generations of indigenous trackers, and an unshakeable reverence for the Great Apes and migrating megafauna.
+            </p>
+<p>
+              For decades, international operators sold East Africa through distant desks in London and Geneva, repatriating revenues far from the community forest borders where trackers put their lives on the line. We rebelled against that extraction model.
+            </p>
+<p>
+              AMAJO unified generational wildlife trackers with bespoke bush architects to prove that ultra-luxury hospitality and uncompromising sovereign conservation are not opposing forces—they are the only sustainable path forward.
+            </p>
+</div>
+<div class="flex items-center gap-space-lg pt-space-xs">
+<div class="flex -space-x-3">
+<div class="w-12 h-12 rounded-full overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait of an African male senior safari expedition specialist in olive linen shirt with warm volcanic mists in the background in golden hour lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJexlMxL3IPOgVpvUvhyoEVFRFs0T6-gHETa-zqfs0URSQkn2WiG6Jf9URDbEMQoWfX_KScIO6iAWzcacvwAKvrmjZKsrMyTknNl3Uo4U9q3SWeMTT2wM88YKBVfgNJ_8WbMr_3DqIaWWjzL6G-MBIzY7pFKjNabJjzyU7gn4-gnXUhUsgp_VgQS4v6cqry5YJkZKOukDlZqatYcYErDRel0AGLQGBcZj6Aa3g6ZrZW_k-MKEi0L2g"/>
+</div>
+<div class="w-12 h-12 rounded-full overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait of a female African wildlife researcher in khaki field gear smiling thoughtfully under acacia tree canopy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk6xa1AdLuFloxgtzYXw1oU28b4c6jBvTI5OTgq9WUDSDL-c72ygMPp4nVUwOIwNp9kwRncK11xlo8kT9aIl-e0-AJ2iJ2O_bjobRa9z462ceJhsyKUHV2622_OTcMMnKVlyMjLxN2YqezBLQcpDxng8al_b25hi7Wg4v0BhByuLFTFgxCjoa-MV2U46DWYY87dWqYd8ct5k0g6PAc3Tt1QJ9ul70_0LPO9ZmX5z27CNA06yqrdYO1"/>
+</div>
+<div class="w-12 h-12 rounded-full overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait of an East African aviation director and veteran bush pilot in aviator sunglasses and field apparel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEXDB4DItDmQiNJ0oETxXX01QsCzi-U71qIaU5fFY_oYetcM9KaLXgfiAY1HvbVq5AoQXfGYY-0LmaPwJsEsfiYl4TxXbywjbuMWsP3a6KPaTYfWx67GGMy1x6cTzatuFIGyO4LbhXwSa17XQaYNiNSR0upbpT7_qeY-eodnWnq8LeNTANCStpHtW2UU93gtbltEqwRfPp1B-xP8h43hr_RnZzAo0gkryaPsoj2iW_5y3TelfQkdV4"/>
+</div>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Governed by Field Naturalists</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Active field guides sit on our sovereign executive council</span>
+</div>
+</div>
+</div>
+<!-- Right Side Quote & Stat Block -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<div class="relative overflow-hidden rounded-2xl shadow-xl">
+<div class="w-full h-72 bg-cover bg-center" data-alt="Majestic silverback mountain gorilla sitting peacefully surrounded by lush emerald bamboo foliage in Rwanda's mist-shrouded Virunga Mountains." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcs6bno_mLznIeNpYTRme5VOmDSt3E25MeUYfv200Jj-G3X0cJ9M9ojYItbUpUR5r-4ACdhraKr4WtXzQqDaIvmdMaEatvwtjlSNAsF-XnabMjtq-_TecmGnTLdqw8sx1iJ18Wi-PMTO5kZyQ27wwJ6VkY0rAXCUV0QFdJ4An_-TYoqY0ocuCrNAIQ0feoywLgdc8mE4t_iOiLzFWrr78sUvqW-UU550U7liaVFyGQ24wt3Y7Bnpls')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 inset-x-0 p-space-lg text-inverse-on-surface">
+<span class="inline-block px-space-xs py-space-3xs rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider mb-space-2xs">Habitat Direct</span>
+<p class="font-headline-sm text-headline-sm leading-snug">Virunga &amp; Bwindi Gorilla Population Growth: +4.2% Year-Over-Year</p>
+</div>
+</div>
+<div class="bg-surface-container p-space-xl rounded-2xl shadow-sm relative">
+<span class="material-symbols-outlined text-primary-fixed-dim absolute top-4 right-4 text-[48px]">format_quote</span>
+<p class="font-headline-sm text-headline-sm text-on-surface italic relative z-10 leading-snug">
+              “We measure our success not merely in luxury delivered, but in mountain gorilla populations thriving, anti-poaching patrol days funded, and indigenous community dignities upheld.”
+            </p>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Jean-Claude Nzeyimana &amp; Amara Koech</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Co-Founders • Kigali &amp; Nairobi Desks</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">fingerprint</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. The 100% Transparent Conservation Royalty Matrix -->
+<section class="max-w-container-max mx-auto px-space-md py-space-3xl bg-surface-container-low rounded-3xl my-space-lg shadow-sm" id="matrix">
+<div class="max-w-3xl mb-space-2xl">
+<div class="inline-flex items-center gap-space-2xs text-primary font-label-sm text-label-sm uppercase tracking-wider mb-space-2xs">
+<span class="material-symbols-outlined text-[16px]">pie_chart</span>
+<span>Fiscal Radical Transparency</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+          The 100% Conservation Royalty Matrix
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+          Every bespoke itinerary booked with AMAJO carries open-book accountability. We publish our reserve allocations so our guests know precisely how their presence protects Africa's wildest horizons.
+        </p>
+</div>
+<!-- Matrix Layout: Interactive Visualization & Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- SVG Donut Chart with dynamic aesthetic -->
+<div class="lg:col-span-5 flex flex-col items-center justify-center bg-surface-container-lowest p-space-xl rounded-2xl shadow-sm">
+<div class="relative w-64 h-64">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- 35% Habitats: Dasharray 35, 65 | Offset 0 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#a43700" stroke-dasharray="35 65" stroke-dashoffset="0" stroke-width="14"></circle>
+<!-- 25% Rangers: Dasharray 25, 75 | Offset -35 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#7b5410" stroke-dasharray="25 75" stroke-dashoffset="-35" stroke-width="14"></circle>
+<!-- 20% Community: Dasharray 20, 80 | Offset -60 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#78564e" stroke-dasharray="20 80" stroke-dashoffset="-60" stroke-width="14"></circle>
+<!-- 20% Logistics: Dasharray 20, 80 | Offset -80 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#e0c0b5" stroke-dasharray="20 80" stroke-dashoffset="-80" stroke-width="14"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Audited</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">100%</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Impact Flow</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-space-sm justify-center mt-space-lg text-center">
+<span class="inline-flex items-center gap-space-3xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Habitats &amp; Permits
+            </span>
+<span class="inline-flex items-center gap-space-3xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span> Ranger Health
+            </span>
+<span class="inline-flex items-center gap-space-3xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Community
+            </span>
+<span class="inline-flex items-center gap-space-3xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span> Eco-Logistics
+            </span>
+</div>
+</div>
+<!-- 4 Allocation Cards -->
+<div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-headline-md text-headline-md text-primary font-bold">35%</span>
+<span class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold">Habitats &amp; Official Park Permits</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+              Remitted directly to Rwanda Development Board (RDB Gorilla Conservation) and Kenya Wildlife Service (KWS) marine and savanna reserves.
+            </p>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-headline-md text-headline-md text-tertiary font-bold">25%</span>
+<span class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">medical_services</span>
+</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold">Ranger Corps &amp; Veterinary Care</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+              Co-financing Gorilla Doctors emergency field operations and K-9 scent detection anti-poaching units across key migratory corridors.
+            </p>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-headline-md text-headline-md text-secondary font-bold">20%</span>
+<span class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">diversity_3</span>
+</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold">Indigenous Community Trust Funds</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+              Unrestricted grants directly empowering border-zone schools, women-led basketry cooperatives, and clean solar micro-grids.
+            </p>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface-variant font-bold">20%</span>
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">flight_takeoff</span>
+</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold">Ultra-Luxe Eco-Aviation &amp; Logistics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+              Maintaining bespoke bush cruisers, electric game viewers, and charter operations transitioning directly into certified Sustainable Aviation Fuels.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Master Naturalists & Field Leadership Spotlight -->
+<section class="max-w-container-max mx-auto px-space-md py-space-3xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-3xs">The Custodians</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Master Naturalists &amp; Field Leadership</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          True luxury is defined by who interprets the wilderness for you. Our field directors are revered researchers, lifelong trackers, and conservation champions.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Leader 1 -->
+<div class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A portrait of Jean-Claude Nzeyimana, an experienced Rwandan mountain guide and gorilla specialist in Volcanoes National Park looking thoughtfully into the mountain rain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPWfLxuHcs-twxLIwva6hYpgC6bHD7P4DZyudwdfxP3N6jpc-H4eOJyyCwOcSpR058Bxa5Q_rZlEvNXn9gMPJZ0EdJeONufFfsydgw6jF_eQtMo05BlUfnUCAmpmwW7nN5kv23uO3mZQYT--dJA3fgEX2Smq1lkxPOlpSOqGUMVSuWkwASrI-B0bfCGd2dNDIPE95DCHEd2vpajQ-qFiJrj9Q3XybdTRlzaWU5ZXt8C5QP9ETLIHDm"/>
+<div class="absolute top-3 left-3 bg-inverse-surface/80 backdrop-blur-md px-space-xs py-space-3xs rounded font-label-sm text-label-sm text-inverse-on-surface">
+              Kigali Desk
+            </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Jean-Claude Nzeyimana</h3>
+<p class="font-label-md text-label-md text-primary font-medium mt-space-3xs">Head of Expeditions &amp; Primate Specialist</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
+                With over 18 years navigating the Virunga mist, Jean-Claude has introduced naturalists and heads of state to mountain gorilla families with peerless tracking instincts.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-space-3xs"><span class="material-symbols-outlined text-[16px] text-tertiary">award_star</span> RDB Master Ranger</span>
+<span>18 yrs exp</span>
+</div>
+</div>
+</div>
+<!-- Leader 2 -->
+<div class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Amara Koech, a veteran Kenyan bush pilot and wildlife strategist, standing beside a Cessna Grand Caravan on a sun-drenched savannah airstrip." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxxN4ZAiKzxCrMOWokU56KDkOsyHO1_o7IOQ0sgzeSxezfddqH-GECzPAIIWTttGhJIz396u3SWdwKOBeSzfjlBFzgqgpIvNi91PACdrq-Ki8K2H-QhvCYGlOkWymRzYL7SbhbQqrrmJ9h2k4sKqZzqBipqtDuAZ45WW9PYYbvlyWfdDHNIJKHRzBNWXDu-dhTjA9A8nkqZI93cgibdXUZr8HMYJENLR5J4Blpg-xDPEwWnMO2Z4uF"/>
+<div class="absolute top-3 left-3 bg-inverse-surface/80 backdrop-blur-md px-space-xs py-space-3xs rounded font-label-sm text-label-sm text-inverse-on-surface">
+              Nairobi Hub
+            </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Amara Koech</h3>
+<p class="font-label-md text-label-md text-primary font-medium mt-space-3xs">Director of Aviation &amp; Mara Operations</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
+                A second-generation Mara pilot and aerial conservation observer, Amara pioneers low-emission private fly-in circuits across the Serengeti-Mara ecosystem.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-space-3xs"><span class="material-symbols-outlined text-[16px] text-tertiary">military_tech</span> ATTP Gold Wings</span>
+<span>6,200+ Flight Hrs</span>
+</div>
+</div>
+</div>
+<!-- Leader 3 -->
+<div class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Dr. Maya Lin, chief wildlife ecologist, examining botanical canopy specimens in Uganda's lush Kyambura Gorge rainforest with ambient sun rays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGx2n2ats0QEVStSD3aFh3KecXXrj3tOVgQKwOMIDDZiV-vfKQPlkfVxq2wlHxiY-SvPt5Aq6gUa62XjQSwQ0Np2sgOd-_8HFASfFHEcN9fdYhtgbmuMsfMYMttWRq9bkd6mCJuimiFXJchYzP2l_p4G5ZkqsGCFYSys-wpAe61Ca0_In9Cdgpbq5pi5WIBg0taStobgn8cU9Y8GAzahzWe_ilYMtSRJwweQnIwbpWjdqKGm-cOjvk"/>
+<div class="absolute top-3 left-3 bg-inverse-surface/80 backdrop-blur-md px-space-xs py-space-3xs rounded font-label-sm text-label-sm text-inverse-on-surface">
+              Entebbe &amp; Kyambura
+            </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Dr. Maya Lin</h3>
+<p class="font-label-md text-label-md text-primary font-medium mt-space-3xs">Head Wildlife Ecologist &amp; Primate Advisor</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
+                Advising on chimpanzee corridor health between Queen Elizabeth and Kibale, Dr. Lin curates our scientific guest immersions and academic field journals.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-space-3xs"><span class="material-symbols-outlined text-[16px] text-tertiary">science</span> PhD Zoology (Makerere)</span>
+<span>Published Author</span>
+</div>
+</div>
+</div>
+<!-- Leader 4 -->
+<div class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Emmanuel Kwizera, legendary chief master tracker, dressed in field safari attire standing calmly in golden savannah grass in Akagera." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_Rq7VwYpb7plkChuXBQF212VzCeWdijoHUxw1Uur_9Ce65VCgrK_bBaRp4EHBqv3w9fmvaHSzpXA6mEM5PdXYBOWNHJCZyMkGks_xNZczfS9ozzOWH-bVJ5qKsj2n21CJpMBgK1MM0rmaL4YSa4e50TI_RS9Be57hdORt15hHJaw8A-5hEz55eM67PQYIEoMYnn1kcnW0FMQ2yNX1u3-Cjj9OJ9M2a4-E4Foq9MDn_wK4EFtZ95Nb"/>
+<div class="absolute top-3 left-3 bg-inverse-surface/80 backdrop-blur-md px-space-xs py-space-3xs rounded font-label-sm text-label-sm text-inverse-on-surface">
+              Volcanoes &amp; Akagera
+            </div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Emmanuel Kwizera</h3>
+<p class="font-label-md text-label-md text-primary font-medium mt-space-3xs">Chief Master Tracker &amp; Guide Mentor</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
+                Descended from indigenous track-finders, Emmanuel mentors every emerging guide at AMAJO, instilling sacred tracking ethics and instinctive animal body-language wisdom.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-space-3xs"><span class="material-symbols-outlined text-[16px] text-tertiary">workspace_premium</span> Elder Tracker Award</span>
+<span>24 yrs exp</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Our Inviolable Conservation Tenets -->
+<section class="max-w-container-max mx-auto px-space-md py-space-3xl">
+<div class="text-center max-w-2xl mx-auto mb-space-2xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-3xs">Our Ethical Foundation</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Inviolable Conservation Tenets</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+          Non-negotiable ethical protocols governing every safari, charter takeoff, and remote camp pairing we orchestrate.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Tenet 1 -->
+<div class="bg-surface-container p-space-lg rounded-2xl flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-all duration-300">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-md mb-space-md">
+<span class="material-symbols-outlined text-[24px]">visibility_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Zero-Crowd Field Etiquette</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              We mandate strict single-vehicle sighting protocols. No radio chases, no overcrowding delicate hunting lions or nesting cheetahs. Silence and sanctity prevail.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Protocol #01 • Sanctuary</span>
+</div>
+</div>
+<!-- Tenet 2 -->
+<div class="bg-surface-container p-space-lg rounded-2xl flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-all duration-300">
+<div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center shadow-md mb-space-md">
+<span class="material-symbols-outlined text-[24px]">eco</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Direct Carbon-Offset Bush Wings</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Every private bush flight contributes to accredited cloud forest restoration projects in Nyungwe National Park, funding native sapling propagation.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold tracking-wider">Protocol #02 • Atmosphere</span>
+</div>
+</div>
+<!-- Tenet 3 -->
+<div class="bg-surface-container p-space-lg rounded-2xl flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-all duration-300">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary text-on-secondary flex items-center justify-center shadow-md mb-space-md">
+<span class="material-symbols-outlined text-[24px]">handshake</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Fair-Wage Dignity For Field Trackers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Our guides, trackers, and village porters receive compensation 40% above regional industry baselines, with year-round healthcare and family educational coverage.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Protocol #03 • Equity</span>
+</div>
+</div>
+<!-- Tenet 4 -->
+<div class="bg-surface-container p-space-lg rounded-2xl flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-all duration-300">
+<div>
+<div class="w-12 h-12 rounded-xl bg-inverse-surface text-inverse-on-surface flex items-center justify-center shadow-md mb-space-md">
+<span class="material-symbols-outlined text-[24px]">home_work</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">100% Audited Partner Lodges</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              We exclusively commission sanctuaries—including Singita, Bisate, and One&amp;Only Gorilla's Nest—that operate off-grid solar arrays and zero single-use plastics.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-wider">Protocol #04 • Standards</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Institutional Accreditations & Scientific Alliances -->
+<section class="max-w-container-max mx-auto px-space-md py-space-2xl">
+<div class="bg-surface-container-lowest p-space-xl rounded-2xl shadow-sm text-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block mb-space-sm">Sanctioned &amp; Accredited Alliances</span>
+<div class="flex flex-wrap items-center justify-center gap-space-xl opacity-80 mt-space-md">
+<div class="flex items-center gap-space-2xs px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">shield</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Rwanda Development Board (RDB)</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-tertiary text-[24px]">nature</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Kenya Wildlife Service (KWS)</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-secondary text-[24px]">park</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Uganda Wildlife Authority (UWA)</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">favorite</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Dian Fossey Gorilla Fund</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface text-[24px]">stars</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">ATTA Premier Fellow</span>
+</div>
+<div class="flex items-center gap-space-2xs px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-error text-[24px]">medical_services</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">AMREF Flying Doctors Life Member</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Inspiring Call to Action -->
+<section class="max-w-container-max mx-auto px-space-md py-space-2xl" id="contact">
+<div class="relative rounded-3xl overflow-hidden shadow-2xl p-space-2xl md:p-space-4xl text-center flex flex-col items-center justify-center">
+<!-- Background Imagery with Scrim -->
+<div class="absolute inset-0 bg-cover bg-center -z-20" data-alt="A warm dramatic panoramic twilight view across the Mara plains with silhouettes of acacia trees and distant wildlife under an amber African sunset." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkjVxlXokud3ceophqoHaO7segdrFAUf_JmESvhUNnPCgDDsYnbaCo_6UQg5Wh3oE1kjM8Kcm2OVIKO6mCiJUfvN3h0b1sv_degxmk7Qv7T26gP6u_kvsbTthMw7wi0jLvGAfRVzf0l113Gs-2bbfMzXr_-_UH7rDiMcQgRSmNOzAIty4PF6jeI8_XtCTKCRZNb6J4Bo8gzcVz_e8CeYzRmmBLB0H0SSrHm9ZOH5Bi7_Hf78kyKD6O')"></div>
+<div class="absolute inset-0 bg-inverse-surface/85 backdrop-blur-[2px] -z-10"></div>
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-3xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-space-md font-bold">
+          Step Beyond Ordinary Travel
+        </span>
+<h2 class="font-display-xl text-display-xl text-inverse-on-surface max-w-3xl leading-tight">
+          Become Part of the Conservation Legacy
+        </h2>
+<p class="font-body-xl text-body-xl text-inverse-on-surface/80 max-w-2xl mt-space-md leading-relaxed">
+          Your footprint can safeguard ancient primate habitats and empower sovereign African wildlife guardians. Begin co-designing your bespoke East African expedition today.
+        </p>
+<div class="flex flex-col sm:flex-row items-center gap-space-md mt-space-xl">
+<a class="w-full sm:w-auto bg-primary hover:bg-primary-container text-on-primary px-space-xl py-space-sm rounded-lg font-label-lg text-label-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-space-2xs uppercase tracking-wider" href="#">
+<span>Design Your Tailored Journey</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 text-inverse-on-surface px-space-xl py-space-sm rounded-lg font-label-lg text-label-lg backdrop-blur-md transition-all flex items-center justify-center gap-space-2xs uppercase tracking-wider" href="tel:+250788123456">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+<span>Speak With Our Architects</span>
+</a>
+</div>
+<div class="mt-space-xl flex items-center gap-space-md text-inverse-on-surface/60 font-body-sm text-body-sm">
+<span class="flex items-center gap-space-3xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">check_circle</span>
+            Guaranteed Gorilla &amp; Primate Permits
+          </span>
+<span class="hidden md:inline">•</span>
+<span class="flex items-center gap-space-3xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">check_circle</span>
+            Direct Field Naturalist Consultation
+          </span>
+</div>
+</div>
+</section>
+</div>
+</div></main>
+<!-- Luxury Public Website Footer -->
+<footer class="bg-inverse-surface text-inverse-on-surface pt-space-4xl pb-space-2xl border-t border-outline-variant/10">
+<div class="max-w-container-max mx-auto px-gutter-desktop">
+<!-- Footer Top: Brand & Newsletter -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl pb-space-3xl border-b border-inverse-on-surface/10">
+<div class="lg:col-span-5 flex flex-col items-start">
+<div class="flex items-center gap-space-sm mb-space-sm">
+<img alt="AMAJO Logo" class="h-14 w-auto object-contain rounded-lg bg-surface-container-lowest/90 p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzEmatNOzsruM_kffcGB37De_HnH7o_GnWczR_8P-Ctgic-wDrUJ6tsIOFjwpBFv43nJm-p3seKU7ni5BjAyR0KXXAR82KT_MJk2Lk-1Ek-pmnM14cr56UFCcINUqqY1rnWFkcxvlkMoFeV7CtWpvHUwgnkQVSAu7RBaNwELT3769TLl8N4oFu8fugc58Ye3qs0OXEsVVQ9Vw5yu5jbU6cxao3EDZmjhDTpb0RrPnCHrySzhJ1bj6DQddGsTaKlbp1vw"/>
+<div>
+<span class="font-headline-sm text-headline-sm tracking-wider uppercase text-inverse-on-surface block leading-tight">AMAJO</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-widest">Essence of Africa</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-inverse-on-surface/70 max-w-md leading-relaxed mt-space-xs">
+          An indigenous East African luxury conservation travel collective based in Kigali, Nairobi, and Kampala. Crafting immersive primate and savannah expeditions with verifiable ecological integrity.
+        </p>
+<div class="mt-space-lg flex items-center gap-space-sm text-tertiary-fixed-dim font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<span>100% Conservation Royalty Pledged • Native Naturalist Led</span>
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col justify-center">
+<div class="bg-surface-variant/10 p-space-xl rounded-2xl border border-inverse-on-surface/10">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary-fixed-dim block mb-space-3xs">Private Dispatches</span>
+<h3 class="font-headline-sm text-headline-sm text-inverse-on-surface">Dispatches from the Savannah &amp; Mist</h3>
+<p class="font-body-sm text-body-sm text-inverse-on-surface/70 mt-space-2xs mb-space-md">
+            Receive seasonal primate census briefings, migration forecasts, and exclusive preview access to newly gazetted private wilderness conservancies.
+          </p>
+<form class="flex flex-col sm:flex-row gap-space-xs" onsubmit="event.preventDefault();">
+<input class="flex-1 bg-surface-container-lowest/10 border border-inverse-on-surface/20 rounded-lg px-space-md py-space-xs text-inverse-on-surface placeholder:text-inverse-on-surface/40 font-body-sm text-body-sm focus:outline-none focus:border-primary" placeholder="Enter your private email address" type="email"/>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-space-lg py-space-xs rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap" type="submit">
+              Subscribe
+            </button>
+</form>
+</div>
+</div>
+</div>
+<!-- Footer Links Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-xl py-space-2xl border-b border-inverse-on-surface/10 font-body-sm text-body-sm">
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary-fixed-dim mb-space-md font-bold">Iconic Regions</h4>
+<ul class="space-y-space-xs text-inverse-on-surface/75">
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Volcanoes National Park (Rwanda)</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Bwindi Impenetrable Forest (Uganda)</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Greater Maasai Mara (Kenya)</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Serengeti &amp; Ngorongoro (Tanzania)</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Nyungwe Cloud Forest Canopy</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Akagera Savannah Wetland</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary-fixed-dim mb-space-md font-bold">Curated Portfolios</h4>
+<ul class="space-y-space-xs text-inverse-on-surface/75">
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">The Sovereign Great Ape Trail</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Private Bush Wings &amp; Charters</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Great Migration River Crossings</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Off-Grid Solar Sanctuaries</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Botanical &amp; Chimpanzee Expeditions</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Direct Bespoke Itinerary Design</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary-fixed-dim mb-space-md font-bold">Direct Desks</h4>
+<ul class="space-y-space-xs text-inverse-on-surface/75">
+<li><span class="text-inverse-on-surface block font-medium">Kigali Operations:</span> +250 788 123 456</li>
+<li><span class="text-inverse-on-surface block font-medium">Nairobi Flight Desk:</span> +254 711 987 654</li>
+<li><span class="text-inverse-on-surface block font-medium">Entebbe Primate Bureau:</span> +256 702 456 789</li>
+<li><span class="text-inverse-on-surface block font-medium">Concierge Inquiries:</span> expeditions@amajo.africa</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary-fixed-dim mb-space-md font-bold">Ethics &amp; Trust</h4>
+<ul class="space-y-space-xs text-inverse-on-surface/75">
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#matrix">Conservation Royalty Matrix</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Single-Vehicle Sighting Pledge</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Tracker Health &amp; Pension Charter</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">RDB Official Permit Allocation</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">ATTA Premier Fellow Code</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar: Copyright & Accreditations -->
+<div class="pt-space-xl flex flex-col md:flex-row items-center justify-between text-inverse-on-surface/60 font-body-sm text-body-sm gap-space-md">
+<div>
+        © 2026 AMAJO Safaris Ltd. All rights reserved. Sovereign African Wildlife Travel.
+      </div>
+<div class="flex items-center gap-space-lg text-inverse-on-surface/70 font-label-sm text-label-sm">
+<span>RDB Licensed • ATTA Fellow #4982 • KATO Member</span>
+<span class="hidden sm:inline">•</span>
+<a class="hover:text-inverse-on-surface transition-colors" href="#">Privacy &amp; Dossiers</a>
+<span class="hidden sm:inline">•</span>
+<a class="hover:text-inverse-on-surface transition-colors" href="#">Terms of Sanctuary</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#79574e","background":"#fcf9f4","on-surface-variant":"#58423a","surface-container-lowest":"#ffffff","on-primary-container":"#fffbff","on-error-container":"#93000a","surface-container-low":"#f6f3ee","on-surface":"#1c1c19","on-primary":"#ffffff","inverse-on-surface":"#f3f0eb","tertiary-fixed-dim":"#f2be71","surface-tint":"#a83900","tertiary-fixed":"#ffddb1","on-tertiary-fixed-variant":"#614000","surface-container-high":"#ebe8e3","surface-dim":"#dcdad5","on-secondary-fixed-variant":"#5e3f37","on-tertiary-fixed":"#291800","primary":"#a43700","error-container":"#ffdad6","tertiary":"#7b5410","secondary-container":"#fed0c5","surface-container":"#f0ede9","primary-fixed-dim":"#ffb59a","surface":"#fcf9f4","on-primary-fixed-variant":"#802900","surface-variant":"#e5e2dd","surface-container-highest":"#e5e2dd","on-tertiary":"#ffffff","outline":"#8c7168","inverse-surface":"#31302d","secondary-fixed":"#ffdad2","on-secondary-fixed":"#2d150f","on-tertiary-container":"#fffbff","secondary":"#78564e","inverse-primary":"#ffb59a","primary-fixed":"#ffdbcf","error":"#ba1a1a","secondary-fixed-dim":"#e9bcb2","on-primary-fixed":"#380d00","on-error":"#ffffff","surface-bright":"#fcf9f4","on-secondary":"#ffffff","primary-container":"#c74e19","outline-variant":"#e0c0b5","on-background":"#1c1c19","tertiary-container":"#976d28"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-desktop":"2rem","space-2xl":"3rem","space-sm":"0.75rem","space-2xs":"0.25rem","space-4xl":"6rem","space-3xs":"0.125rem","space-xs":"0.5rem","space-lg":"1.5rem","space-xl":"2rem","gutter-mobile":"1.25rem","container-max":"1360px","space-md":"1rem","space-5xl":"8rem","space-3xl":"4rem"},fontFamily:{"label-md":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"label-sm":["Plus Jakarta Sans"],"headline-lg":["Playfair Display"],"display-xl":["Playfair Display"],"display-xl-mobile":["Playfair Display"],"body-md":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"body-xl":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Playfair Display"],"body-lg":["Plus Jakarta Sans"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"600"}],"headline-md":["28px",{lineHeight:"34px",fontWeight:"500"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-xl":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"600"}],"display-xl-mobile":["38px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-sm":["22px",{lineHeight:"28px",fontWeight:"500"}],"body-xl":["20px",{lineHeight:"32px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.04em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-lg-mobile":["30px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- Top Brand Public Header / Navigation -->
+<header class="sticky top-0 z-50 w-full bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300 shadow-sm">
+<div class="max-w-[1360px] mx-auto px-gutter-mobile md:px-gutter-desktop">
+<!-- Utility Sub-bar -->
+<div class="hidden md:flex items-center justify-between py-1.5 border-b border-outline-variant/20 text-body-sm text-on-surface-variant font-label-sm">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+          Kigali • Nairobi • Entebbe Desks Active
+        </span>
+<span class="text-outline-variant">|</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">phone_in_talk</span>
+          Direct Concierge: +250 788 000 000 / +254 700 000 000
+        </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center bg-surface-container-low rounded p-0.5">
+<button class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-bold text-[11px] shadow-sm" type="button">USD ($)</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface text-[11px]" type="button">EUR (€)</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface text-[11px]" type="button">GBP (£)</button>
+</div>
+<span class="text-outline-variant">|</span>
+<a class="flex items-center gap-1 text-primary hover:text-primary-container font-semibold tracking-wider transition-colors" href="https://wa.me/250788000000" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[15px]">chat</span> WhatsApp 24/7
+        </a>
+</div>
+</div>
+<!-- Main Navigation Bar -->
+<div class="flex items-center justify-between h-20 md:h-22">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group shrink-0" href="#">
+<img alt="AMAJO - Essence of Africa" class="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxtbraBX3Ognlgjt9DUPOFIs9jR2zYKh9lTV-dI_OGcb4mKgVyq5igICAxKH1rioZMlmbsRawHrLvTxJ0ci636qEhYBbP3kXYGzGgPlMmF-Lm8pjtNkVKtU33rewkQeHsX3BIWtPeDGFETG2iUSnaN5t6a8qk1wb36VsJKgVkhjR18YCPiYCxLji9Rj3O6SzYrtqEvx-kLPlU5CyArw_Cb84NJGI61qtkSjtIGaFJuyoFDWHzYNcqUYfU-Go_8HJN32w"/>
+<div class="flex flex-col">
+<span class="font-headline-md text-xl md:text-2xl tracking-[0.18em] uppercase text-on-surface leading-none font-semibold">AMAJO</span>
+<span class="font-label-sm text-[10px] text-secondary tracking-[0.25em] uppercase mt-1">Essence of Africa</span>
+</div>
+</a>
+<!-- Desktop Nav Links -->
+<nav class="hidden xl:flex items-center gap-6 font-label-md text-[13px] tracking-widest uppercase">
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2" href="#">Destinations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2" href="#">Curated Safaris</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2" href="#">Gorilla Trekking</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2" href="#">Experiences</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2" href="#">About Us</a>
+<a aria-current="page" class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors" href="#">Contact / Concierge</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2" href="#">Journal</a>
+</nav>
+<!-- Right CTAs -->
+<div class="flex items-center gap-space-sm">
+<a class="hidden sm:inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg border border-outline/30 hover:border-primary text-on-surface font-label-md text-xs tracking-wider uppercase transition-all bg-surface-container-lowest/60 hover:bg-surface-container-lowest" href="#conciergeForm">
+<span class="material-symbols-outlined text-[16px] text-primary">edit_calendar</span>
+<span>Inquire</span>
+</a>
+<a class="bg-primary hover:bg-primary-container text-on-primary px-space-md md:px-space-lg py-2.5 rounded-lg font-label-md text-xs md:text-sm tracking-wider uppercase flex items-center gap-2 shadow-[0_2px_8px_rgba(164,55,0,0.25)] hover:shadow-md transition-all shrink-0" href="#conciergeForm">
+<span>Plan Your Journey</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="xl:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="w-full">
+<main class="w-full max-w-[1360px] mx-auto px-gutter-mobile md:px-gutter-desktop pt-space-lg md:pt-space-2xl pb-space-2xl bg-surface"><div class="flex flex-col w-full">
+<!-- Top Ambient Banner & Executive Hero Section -->
+<section class="relative overflow-hidden bg-surface-container-low rounded-2xl p-space-xl lg:p-space-3xl mb-space-2xl shadow-sm">
+<div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-gradient-to-br from-primary-fixed/30 to-tertiary-fixed/20 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md max-w-4xl">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-3xs rounded-full bg-primary-container/10 text-primary font-label-sm text-label-sm uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+          In-Country Concierge &amp; Operations Desks
+        </span>
+<span class="hidden sm:inline-block text-outline-variant font-label-sm text-label-sm">|</span>
+<span class="hidden sm:flex items-center gap-space-3xs text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-tertiary">lock</span>
+          Direct Diplomatic &amp; Field Routing
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight leading-tight">
+        Connect With Our Expedition Architects in Kigali, Nairobi &amp; Entebbe
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+        Whether you are contemplating a private gorilla habituation trek, seeking charter clearances across the Great Rift Valley, or orchestrating an exclusive multi-generational family safari, our senior directors are available directly across our operational hubs.
+      </p>
+<!-- Reassurance Ribbon -->
+<div class="mt-space-sm pt-space-md flex flex-wrap items-center gap-space-lg bg-surface-container-lowest/80 backdrop-blur rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed-dim/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Guaranteed Response</span>
+<span class="font-label-md text-label-md text-on-surface">Within 24 hours for bespoke dossiers</span>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-variant hidden sm:block"></div>
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">cell_tower</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">In-Transit Travelers</span>
+<span class="font-label-md text-label-md text-on-surface">24/7 Live Field Emergency &amp; Satellite</span>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-variant hidden md:block"></div>
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">flight_takeoff</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Direct Air Clearance</span>
+<span class="font-label-md text-label-md text-on-surface">KGL • WIL • EBB Hub Direct</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Regional Studio Hub Cards Section -->
+<section class="mb-space-3xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-space-3xs">Regional Command Posts</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Three Regional Studio Hubs</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mt-space-xs md:mt-0">
+        Staffed by licensed safari directors, aviation coordinators, and Rwanda &amp; Uganda wildlife authority liaisons.
+      </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Kigali Studio Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="relative h-44 rounded-lg overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Boutique high-end safari consultation lounge in Kigali Rwanda with handwoven textures, warm terracotta accents, panoramic glass doors overlooking lush green hills and volcanic peaks in soft morning mist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGAEehvtXeJHezHuPeNMMadKUZBazDXLkcPywQlde1qt_vTeaLC86NlIC9fwBBNlhxooNHHudIyYixY6aBLjT1flJnr7NAk1d1Dk7VXJmz7RzgnHTkuHQtQo3TR9SwAeYBJjiObimwsoyENY5IQ39zpKENeKrl9rPF4X2Rb7aSYr7tKKdBVhr_bat_NtpZYQ2hgicu5R_pumc5IkapYN-cmV2697wKiZhvIvTaRNyKPQrNhj4sS27j"/>
+<div class="absolute top-3 left-3 px-space-xs py-space-3xs rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">
+              Rwanda Headquarters
+            </div>
+<div class="absolute bottom-3 right-3 px-space-xs py-space-3xs rounded-full bg-inverse-surface/80 backdrop-blur text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+              Live: UTC+2
+            </div>
+</div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Kigali Studio &amp; Primates</h3>
+<span class="font-label-sm text-label-sm px-space-xs py-space-3xs rounded bg-surface-container-high text-secondary">Hub Code: KGL</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Direct allocation for Volcanoes NP gorilla habituation, Nyungwe canopy charters, and VIP tarmac greeting at Kigali International.
+          </p>
+<div class="space-y-space-xs mb-space-lg text-body-sm font-body-sm">
+<div class="flex items-start gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">location_on</span>
+<span>Boulevard de l'Umuganda, Kacyiru District, Kigali, Rwanda</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">schedule</span>
+<span>07:00 – 21:00 EAT (24/7 Field Dispatch)</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">call</span>
+<span class="font-semibold">+250 788 000 000</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 -mx-space-lg -mb-space-lg p-space-lg rounded-b-xl flex items-center justify-between gap-space-xs">
+<a class="flex-1 text-center py-space-xs px-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors shadow-sm" href="tel:+250788000000">
+            Call Desk
+          </a>
+<a class="flex-1 flex items-center justify-center gap-space-2xs py-space-xs px-space-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" href="https://wa.me/250788000000" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>WhatsApp</span>
+</a>
+</div>
+</div>
+<!-- Nairobi Studio Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="relative h-44 rounded-lg overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Refined colonial-modern safari design office in Karen Nairobi Kenya surrounded by acacia trees, featuring vintage brass aeronautical maps, tailored leather seating, and sunlit wood verandas." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtZnBBq7D7CKj_Uuq96QjGdjijz18r2qFxBms5AWii4VtxAhhlnC-A5vbeesTtRwo-9_IkV7x0Lcf_btkSVmPstw8A7_IK3BfAcugoy9BUPcs2pE1FjsHSyDV-M4eIFSop26lJICoZH6PSsS0toIQC4TUXfGBzOae-BH0iCATcWQshtlbk4-q-s7a_mFR_FNweLK4X1gGao_P4G4mGl_ryjPUcnzcWZXsU9zDn3EDHvL7w_HANVK5s"/>
+<div class="absolute top-3 left-3 px-space-xs py-space-3xs rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+              Kenya Flight Center
+            </div>
+<div class="absolute bottom-3 right-3 px-space-xs py-space-3xs rounded-full bg-inverse-surface/80 backdrop-blur text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+              Live: UTC+3
+            </div>
+</div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Nairobi Flight &amp; Savannas</h3>
+<span class="font-label-sm text-label-sm px-space-xs py-space-3xs rounded bg-surface-container-high text-secondary">Hub Code: NBO/WIL</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Private Pilatus PC-12 charters, Maasai Mara concession logistics, Lewa rhino monitoring access, and Amboseli elephant expeditions.
+          </p>
+<div class="space-y-space-xs mb-space-lg text-body-sm font-body-sm">
+<div class="flex items-start gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">location_on</span>
+<span>Karen Road, Karen Sanctuary Precinct, Nairobi, Kenya</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">schedule</span>
+<span>07:00 – 21:00 EAT (Direct Wilson Airside)</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">call</span>
+<span class="font-semibold">+254 700 000 000</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 -mx-space-lg -mb-space-lg p-space-lg rounded-b-xl flex items-center justify-between gap-space-xs">
+<a class="flex-1 text-center py-space-xs px-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors shadow-sm" href="tel:+254700000000">
+            Call Desk
+          </a>
+<a class="flex-1 flex items-center justify-center gap-space-2xs py-space-xs px-space-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" href="https://wa.me/254700000000" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>WhatsApp</span>
+</a>
+</div>
+</div>
+<!-- Entebbe Studio Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="relative h-44 rounded-lg overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Lakeside aviation office overlooking Lake Victoria in Entebbe Uganda with tropical botanical gardens, teak expedition desks, and framed vintage wildlife conservation photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuOkVR_MSiOukO4JIQvltjhgqo3Y8zg8OTtav_zVwmKJcqKGG3jnrFTlRdV2LZEeTiRw6ASa4WOa65LPler4-cX4fwubnKvgCmXMdB6PVAk3ExEnaF1YUd1DvMmzi0tmzhZyxEyWMpWUOhQEIW5KV53zZS6Gg2PZ3J-L_vdmww1FcSQTnTpa366hJ2AWnvG9FQBfP1qL44UtWSSDRFfrmdFFQ2EH8XjLNvUuyH_kix9pq5TiMNAOVV"/>
+<div class="absolute top-3 left-3 px-space-xs py-space-3xs rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider">
+              Uganda Gateway
+            </div>
+<div class="absolute bottom-3 right-3 px-space-xs py-space-3xs rounded-full bg-inverse-surface/80 backdrop-blur text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+              Live: UTC+3
+            </div>
+</div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Entebbe &amp; Bwindi Hub</h3>
+<span class="font-label-sm text-label-sm px-space-xs py-space-3xs rounded bg-surface-container-high text-secondary">Hub Code: EBB</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Uganda Wildlife Authority direct permits, Bwindi Impenetrable forest connections, Kibale habituation, and Lake Victoria seaplane coordination.
+          </p>
+<div class="space-y-space-xs mb-space-lg text-body-sm font-body-sm">
+<div class="flex items-start gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">location_on</span>
+<span>Circular Road, Entebbe International Gateway, Uganda</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">schedule</span>
+<span>08:00 – 20:00 EAT (Lake Victoria Airstrips)</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">call</span>
+<span class="font-semibold">+256 772 000 000</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 -mx-space-lg -mb-space-lg p-space-lg rounded-b-xl flex items-center justify-between gap-space-xs">
+<a class="flex-1 text-center py-space-xs px-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors shadow-sm" href="tel:+256772000000">
+            Call Desk
+          </a>
+<a class="flex-1 flex items-center justify-center gap-space-2xs py-space-xs px-space-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" href="https://wa.me/256772000000" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Priority Inquiries & Direct Video Consultation Form -->
+<section class="mb-space-3xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Left Column: Priority Dispatch Form (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-2xl p-space-xl md:p-space-2xl shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-space-3xs">Confidential Safari Dispatch</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Design Your Bespoke Journey</h2>
+</div>
+<div class="hidden sm:flex items-center gap-space-2xs text-secondary text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">lock</span>
+<span>256-Bit Encrypted</span>
+</div>
+</div>
+<form class="space-y-space-md" id="conciergeForm" onsubmit="event.preventDefault(); handleFormSubmit();">
+<!-- Row 1: Name & Email -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface uppercase tracking-wider mb-space-2xs">Full Name *</label>
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/50 font-body-sm text-body-sm px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="e.g., Lord Alistair Vance" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface uppercase tracking-wider mb-space-2xs">Direct Email *</label>
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/50 font-body-sm text-body-sm px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="name@domain.com" required="" type="email"/>
+</div>
+</div>
+<!-- Row 2: Phone with Country Code & Scope -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface uppercase tracking-wider mb-space-2xs">Phone / WhatsApp *</label>
+<div class="flex gap-space-2xs">
+<select class="w-28 bg-surface-container-low text-on-surface font-body-sm text-body-sm px-space-xs py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-sm">
+<option value="+1">+1 (US/CA)</option>
+<option value="+44">+44 (UK)</option>
+<option value="+250">+250 (RW)</option>
+<option value="+254">+254 (KE)</option>
+<option value="+256">+256 (UG)</option>
+<option value="+33">+33 (FR)</option>
+<option value="+49">+49 (DE)</option>
+<option value="+971">+971 (UAE)</option>
+</select>
+<input class="flex-1 bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/50 font-body-sm text-body-sm px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="000 000 0000" required="" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface uppercase tracking-wider mb-space-2xs">Expedition Scope *</label>
+<select class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-sm">
+<option>Rwanda Gorilla Trekking &amp; Volcanoes</option>
+<option>Kenya Great Migration &amp; Mara Conservancies</option>
+<option>Uganda Habituation &amp; Primate Sanctuaries</option>
+<option>Multi-Country Cross-Border Grand Safari</option>
+<option>Private Aviation &amp; Helicopter Expedition</option>
+<option>Bespoke Sovereign / Family Buyout</option>
+</select>
+</div>
+</div>
+<!-- Row 3: Party Size & Preferred Season -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface uppercase tracking-wider mb-space-2xs">Estimated Party Size</label>
+<div class="grid grid-cols-4 gap-space-2xs">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="party_size" type="radio"/>
+<div class="py-space-xs text-center rounded-lg bg-surface-container-low font-label-sm text-label-sm peer-checked:bg-secondary peer-checked:text-on-secondary transition-all">Solo</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="party_size" type="radio"/>
+<div class="py-space-xs text-center rounded-lg bg-surface-container-low font-label-sm text-label-sm peer-checked:bg-secondary peer-checked:text-on-secondary transition-all">Couple</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="party_size" type="radio"/>
+<div class="py-space-xs text-center rounded-lg bg-surface-container-low font-label-sm text-label-sm peer-checked:bg-secondary peer-checked:text-on-secondary transition-all">3-6 Guests</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="party_size" type="radio"/>
+<div class="py-space-xs text-center rounded-lg bg-surface-container-low font-label-sm text-label-sm peer-checked:bg-secondary peer-checked:text-on-secondary transition-all">7+ Private</div>
+</label>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface uppercase tracking-wider mb-space-2xs">Travel Window</label>
+<select class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-sm">
+<option>Mid 2025 (Peak Season: Jul – Oct)</option>
+<option>Late 2025 (Festive: Dec – Jan)</option>
+<option>Early 2026 (Green Season: Feb – May)</option>
+<option>Mid 2026 (Peak Great Migration)</option>
+<option>Dates Flexible / Consultation Required</option>
+</select>
+</div>
+</div>
+<!-- Notes -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface uppercase tracking-wider mb-space-2xs">Expedition Ambitions &amp; Special Requirements</label>
+<textarea class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/50 font-body-sm text-body-sm px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-sm resize-none" placeholder="Tell us about specific lodges (Singita Kwitonda, Angama Mara, Wilderness Bisate), private charters, dietary wishes, or accessibility considerations..." rows="3"></textarea>
+</div>
+<!-- Preferred Communication Channel -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface uppercase tracking-wider mb-space-2xs">Preferred Response Channel</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-2xs">
+<label class="cursor-pointer flex items-center gap-space-xs p-space-xs rounded-lg bg-surface-container-low">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface">WhatsApp Concierge</span>
+</label>
+<label class="cursor-pointer flex items-center gap-space-xs p-space-xs rounded-lg bg-surface-container-low">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface">Curated PDF Dossier</span>
+</label>
+<label class="cursor-pointer flex items-center gap-space-xs p-space-xs rounded-lg bg-surface-container-low">
+<input class="w-4 h-4 rounded text-primary accent-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface">Zoom Strategy Call</span>
+</label>
+</div>
+</div>
+<!-- Submit CTA -->
+<div class="pt-space-xs flex flex-col sm:flex-row items-center gap-space-md justify-between">
+<button class="w-full sm:w-auto px-space-xl py-space-sm bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded-lg shadow-md transition-all flex items-center justify-center gap-space-2xs group" type="submit">
+<span>Dispatch Private Inquiry to Senior Architect</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="flex items-center gap-space-2xs text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Strict Non-Disclosure &amp; GDPR</span>
+</div>
+</div>
+<div class="hidden p-space-md rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-body-sm text-body-sm flex items-center gap-space-sm animate-fade-in" id="formSuccessToast">
+<span class="material-symbols-outlined text-tertiary-container">check_circle</span>
+<span>Thank you. Your dossier has been routed to our Lead Concierge in Kigali. A personal acknowledgment will follow shortly via WhatsApp/Email.</span>
+</div>
+</form>
+</div>
+<!-- Right Column: What Happens Next & Concierge Assurance (5 cols) -->
+<div class="lg:col-span-5 flex flex-col justify-between gap-space-lg">
+<!-- Next Steps Card -->
+<div class="bg-surface-container-high/60 backdrop-blur rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">route</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">The Concierge Cadence</h3>
+</div>
+<div class="relative pl-6 space-y-space-md before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant/40">
+<!-- Step 1 -->
+<div class="relative">
+<span class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center">1</span>
+<h4 class="font-label-md text-label-md text-on-surface mb-0.5">Assigned to Lead Architect</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Directly vetted by Jean-Claude Nzeyimana (Kigali) or Amara Kipkorir (Nairobi) within 4 business hours.
+              </p>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<span class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center">2</span>
+<h4 class="font-label-md text-label-md text-on-surface mb-0.5">Bespoke Blueprint in 24 Hours</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                You receive a day-by-day flight &amp; lodge dossier including live gorilla permit provisional holds.
+              </p>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<span class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-sm text-label-sm flex items-center justify-center">3</span>
+<h4 class="font-label-md text-label-md text-on-surface mb-0.5">Dedicated WhatsApp Channel</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Direct liaison with our flight dispatchers and camp concierges for instant adjustments.
+              </p>
+</div>
+</div>
+</div>
+<!-- Direct Video Strategy Call Box -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[28px]">video_camera_front</span>
+</div>
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider block">Live Face-to-Face</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Private 1-on-1 Zoom Session</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Review 3D terrain maps, lodge rooms &amp; flight paths live with our directors.</p>
+</div>
+<button class="p-space-xs rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" title="Schedule Strategy Call" type="button">
+<span class="material-symbols-outlined text-[20px]">calendar_add_on</span>
+</button>
+</div>
+<!-- AMREF & Medical Assurance Banner -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-2xl p-space-lg shadow-md">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]">medical_services</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-widest">Medical Air Evacuation Included</span>
+</div>
+<p class="font-body-sm text-body-sm text-inverse-on-surface/80 leading-relaxed mb-space-sm">
+            Every AMAJO expedition guest carries comprehensive AMREF Flying Doctors Maisha tourist coverage with direct King Hussein / Nairobi Hospital dispatch.
+          </p>
+<div class="flex items-center justify-between text-label-sm font-label-sm pt-space-xs text-outline-variant">
+<span>24/7 Field Satellite Link</span>
+<span>Garmin InReach Active Fleet</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Fast-Track Direct Channels & Emergency Support Grid -->
+<section class="mb-space-3xl">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- 24/7 In-Transit Guest Desk -->
+<div class="rounded-2xl p-space-xl bg-primary-container text-on-primary shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-on-primary/10 blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-xs py-space-3xs rounded-full bg-on-primary/20 text-on-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed inline-block animate-ping"></span>
+              Immediate Attention
+            </span>
+<span class="material-symbols-outlined text-[28px] text-on-primary/80">sos</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-space-xs">Active In-Transit Emergency Desk</h3>
+<p class="font-body-md text-body-md text-on-primary/90 mb-space-lg leading-relaxed">
+            Reserved exclusively for guests currently inside Rwanda, Kenya, Uganda, or Tanzania experiencing flight shifts, weather deviations, or requiring rapid ranger support.
+          </p>
+</div>
+<div class="space-y-space-xs">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs p-space-sm rounded-xl bg-on-primary/10 backdrop-blur">
+<div>
+<span class="font-label-sm text-label-sm text-on-primary/70 block uppercase">24/7 Field Dispatch Hotline</span>
+<span class="font-headline-sm text-headline-sm text-on-primary tracking-wider">+250 788 999 999</span>
+</div>
+<a class="px-space-md py-space-xs bg-surface-container-lowest text-primary font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container transition-colors text-center" href="tel:+250788999999">
+              Direct Dial
+            </a>
+</div>
+<span class="font-label-sm text-label-sm text-on-primary/70 block text-center">Satellite InReach: amajo-ops-eastafrica</span>
+</div>
+</div>
+<!-- Luxury Trade & Private Aviation Liaison -->
+<div class="rounded-2xl p-space-xl bg-surface-container-high text-on-surface shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-xs py-space-3xs rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+              B2B Partnerships
+            </span>
+<span class="material-symbols-outlined text-[28px] text-secondary">flight</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-xs">Travel Trade &amp; Private Aviation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+            Dedicated operational liaison for Virtuoso, Serandipians, private family offices, and business jet handlers (KGL, WIL, MBA) requiring tarmac clearances and diplomatic permits.
+          </p>
+</div>
+<div class="space-y-space-xs">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs p-space-sm rounded-xl bg-surface-container-lowest shadow-sm">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Aviation &amp; Trade Director</span>
+<span class="font-label-md text-label-md text-on-surface">partnerships@amajo-africa.com</span>
+</div>
+<a class="px-space-md py-space-xs bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-sm hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-colors text-center" href="mailto:partnerships@amajo-africa.com?subject=Trade%20Inquiry%20-%20AMAJO">
+              Contact Desk
+            </a>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary pt-space-3xs">
+<span>FBO Handling: Kigali &amp; Wilson</span>
+<span>Wholesale GSA Agreements Available</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Map & Logistics Network Section -->
+<section class="mb-space-3xl bg-surface-container-lowest rounded-2xl p-space-xl md:p-space-2xl shadow-sm">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-space-3xs">Operational Footprint</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">East African Flight &amp; Gateway Network</h2>
+</div>
+<div class="flex items-center gap-space-sm mt-space-xs md:mt-0 text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span> Main Hub</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-tertiary inline-block"></span> Bush Airstrip</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-secondary inline-block"></span> Heli Corridor</span>
+</div>
+</div>
+<!-- Map & Key Logistics Points -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Interactive Visual Map Container (7 cols) -->
+<div class="lg:col-span-7 h-96 rounded-xl overflow-hidden shadow-inner relative bg-gradient-to-br from-surface-container-highest via-surface-container to-surface-container-low" data-location="East Africa Safari Rwanda Kenya Uganda">
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(#8c7168_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<!-- Stylized Route Graphics -->
+<div class="absolute inset-0 flex items-center justify-center p-space-md pointer-events-none">
+<div class="relative w-full h-full">
+<!-- Flight arcs / points -->
+<div class="absolute left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<span class="w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20 animate-pulse"></span>
+<span class="font-label-sm text-xs font-bold text-on-surface mt-1 bg-surface-container-lowest/90 px-2 py-0.5 rounded shadow">Kigali Hub (KGL)</span>
+</div>
+<div class="absolute right-1/4 top-1/3 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<span class="w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20 animate-pulse"></span>
+<span class="font-label-sm text-xs font-bold text-on-surface mt-1 bg-surface-container-lowest/90 px-2 py-0.5 rounded shadow">Nairobi Wilson (WIL)</span>
+</div>
+<div class="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<span class="w-3.5 h-3.5 rounded-full bg-tertiary ring-4 ring-tertiary/20"></span>
+<span class="font-label-sm text-xs font-bold text-on-surface mt-1 bg-surface-container-lowest/90 px-2 py-0.5 rounded shadow">Entebbe / Bwindi (EBB)</span>
+</div>
+<div class="absolute right-1/3 bottom-1/4 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<span class="w-3 h-3 rounded-full bg-secondary ring-2 ring-secondary/30"></span>
+<span class="font-label-sm text-[11px] text-on-surface mt-1 bg-surface-container-lowest/90 px-1.5 py-0.5 rounded shadow">Maasai Mara Airstrip</span>
+</div>
+</div>
+</div>
+<!-- Map Overlay Badges -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex flex-col justify-end p-space-md pointer-events-none">
+<div class="flex flex-wrap gap-space-xs text-inverse-on-surface font-label-sm text-label-sm">
+<span class="px-space-xs py-space-3xs rounded bg-inverse-surface/80 backdrop-blur">KGL Tarmac Escort</span>
+<span class="px-space-xs py-space-3xs rounded bg-inverse-surface/80 backdrop-blur">WIL VIP Terminal</span>
+<span class="px-space-xs py-space-3xs rounded bg-inverse-surface/80 backdrop-blur">Singita Helipad Direct</span>
+<span class="px-space-xs py-space-3xs rounded bg-inverse-surface/80 backdrop-blur">Mara North Runway</span>
+</div>
+</div>
+</div>
+<!-- Logistics Hub Specs (5 cols) -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-space-3xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Kigali International (KGL)</span>
+<span class="font-label-sm text-label-sm px-space-2xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed">Primary Rwanda</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            VIP airside escort at aircraft door, priority diplomatic customs line, private lounge transfer, and connecting Akagera Aviation helicopter transfers to Musanze / Volcanoes.
+          </p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-space-3xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Wilson Airport (WIL)</span>
+<span class="font-label-sm text-label-sm px-space-2xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed">Private Bush Hub</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Private hangar boarding for Cessna Caravan &amp; Pilatus PC-12 flights directly to Maasai Mara, Lewa Downs, and Samburu, bypassing commercial security queues.
+          </p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-space-3xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Entebbe Gateway (EBB)</span>
+<span class="font-label-sm text-label-sm px-space-2xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed">Primate Connection</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Direct lakefront customs handling, scheduled and private charter hops to Kihihi Airstrip (Bwindi Forest) and Kasese (Queen Elizabeth &amp; Rwenzori Mountains).
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Frequently Asked Consultation Questions -->
+<section class="mb-space-2xl">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-space-3xs">Pre-Booking Clarity</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Frequently Asked Consultation Questions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+        Key details regarding gorilla trekking permits, private aircraft operations, and dietary orchestration in remote East African concessions.
+      </p>
+</div>
+<div class="max-w-3xl mx-auto space-y-space-sm" id="faqAccordion">
+<!-- Question 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<button class="faq-toggle w-full flex items-center justify-between text-left gap-space-sm" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface">How far in advance should we secure mountain gorilla permits?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden pt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Rwanda allocates only 96 permits daily across its habituated gorilla families, and Uganda has similar daily caps. For peak travel months (June through October and late December), permits often book out 6 to 12 months in advance. Because AMAJO maintains a registered in-country license with both the Rwanda Development Board (RDB) and Uganda Wildlife Authority (UWA), we can hold official allocations during your initial consultation phase.
+        </div>
+</div>
+<!-- Question 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<button class="faq-toggle w-full flex items-center justify-between text-left gap-space-sm" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface">Can AMAJO handle private jet FBO clearances and cross-border bush flights?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden pt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Yes. Our Nairobi and Kigali flight desks coordinate directly with Civil Aviation Authorities in Rwanda, Kenya, Uganda, and Tanzania. We arrange private hangar parking, ramp transfers, fast-track diplomatic or private aircraft customs, and direct inter-park bush charter legs to avoid commercial transit bottlenecks.
+        </div>
+</div>
+<!-- Question 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<button class="faq-toggle w-full flex items-center justify-between text-left gap-space-sm" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface">What is the deposit policy for bespoke luxury safaris?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden pt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Wildlife permits (such as Gorilla Habituation at $1,500 USD per person in Rwanda or $700/$1,500 in Uganda) require 100% immediate prepayment to the statutory bodies upon reservation. Lodge accommodations and private air charters generally require a 25% to 30% deposit upon itinerary confirmation, with balance due 60 to 90 days prior to arrival.
+        </div>
+</div>
+<!-- Question 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<button class="faq-toggle w-full flex items-center justify-between text-left gap-space-sm" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface">How do you coordinate strict dietary and mobility requirements in bush camps?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden pt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Our senior concierge briefs executive camp chefs in advance of your touchdown. Whether requiring strict kosher-style preparation, organic gluten-free provisions, or specific allergen protocols, fresh supplies are chartered in. For gorilla treks, we arrange specialized sedan-chair porter teams ('Heli-treks' and 'palanquin' carriers) so every guest can encounter mountain gorillas comfortably regardless of mobility limits.
+        </div>
+</div>
+</div>
+</section>
+<!-- Interactive Client-side Logic Script -->
+<script>
+    function toggleFaq(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('.material-symbols-outlined');
+      const isHidden = content.classList.contains('hidden');
+      
+      // Close all other faqs
+      document.querySelectorAll('#faqAccordion .faq-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('#faqAccordion .material-symbols-outlined').forEach(el => el.classList.remove('rotate-180'));
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    }
+
+    function handleFormSubmit() {
+      const toast = document.getElementById('formSuccessToast');
+      if (toast) {
+        toast.classList.remove('hidden');
+        toast.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  </script>
+</div></main>
+</div>
+<!-- Public Luxury Website Footer -->
+<footer class="bg-inverse-surface text-inverse-on-surface border-t border-outline-variant/20 pt-space-3xl pb-space-xl">
+<div class="max-w-[1360px] mx-auto px-gutter-mobile md:px-gutter-desktop">
+<!-- Newsletter / Dispatches Section -->
+<div class="pb-space-2xl border-b border-outline-variant/20 mb-space-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-6">
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-widest block mb-1">Private Dispatch Archive</span>
+<h3 class="font-headline-md text-2xl md:text-3xl text-inverse-on-surface font-semibold">Dispatches from the Savannah &amp; Mist</h3>
+<p class="font-body-md text-inverse-on-surface/75 mt-2 max-w-lg leading-relaxed">
+            Quarterly monographs covering primate conservation biology, seasonal migration patterns, and private aviation corridor access across East Africa.
+          </p>
+</div>
+<div class="lg:col-span-6">
+<form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('Subscribed to AMAJO Dispatches.');">
+<input class="flex-1 bg-surface-variant/10 text-inverse-on-surface placeholder:text-inverse-on-surface/40 px-space-md py-3 rounded-lg border border-outline/30 focus:outline-none focus:ring-1 focus:ring-tertiary-fixed-dim text-body-sm font-body-sm" placeholder="Enter your direct email..." required="" type="email"/>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md tracking-wider uppercase px-space-lg py-3 rounded-lg transition-colors shrink-0 shadow-sm" type="submit">
+              Subscribe
+            </button>
+</form>
+<span class="font-label-sm text-[11px] text-inverse-on-surface/50 mt-2 block">Never syndicated or shared. Strict privacy non-disclosure.</span>
+</div>
+</div>
+</div>
+<!-- Main Navigation Footer Columns -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-2xl border-b border-outline-variant/20">
+<!-- Column 1: Brand & Philosophy -->
+<div class="space-y-space-sm">
+<a class="flex items-center gap-3 group" href="#">
+<img alt="AMAJO" class="h-10 w-auto object-contain brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWqmBazldJ2QNGkiqieOSUznCvbndgMf3ZsYKXajqPV13UXfca92j_OJmLMzfcW2rmIcTxdp9Pf0Tna9xc4UIYbj_P5aaaw7wNPAjSt98D4oqR4BDU9Ctx-QdBzFXKw7YKa8QjDgkyYVe8cmn_aA78XMohJf64IIEgl-UNq_4qEXpjJebL-t3C6DWz812CdekUnWC7db8FdrFGVkKIS_tPIFL5xiYCBjASaDt1XOfScUPkfLN5izYSO0F_jodAnNc13A"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-lg tracking-widest uppercase text-inverse-on-surface leading-tight font-semibold">AMAJO</span>
+<span class="font-label-sm text-[9px] text-tertiary-fixed-dim tracking-[0.2em] uppercase">Essence of Africa</span>
+</div>
+</a>
+<p class="font-body-sm text-body-sm text-inverse-on-surface/70 leading-relaxed">
+          Pioneering bespoke, ultra-luxury primate expeditions and conservation journeys across Rwanda, Kenya, Uganda, and Tanzania since 2011.
+        </p>
+<div class="pt-1 flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-variant/15 text-tertiary-fixed-dim text-xs font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+            Virtuoso Preferred On-Site
+          </span>
+</div>
+</div>
+<!-- Column 2: Iconic Regions -->
+<div>
+<h4 class="font-label-md text-xs tracking-widest uppercase text-inverse-on-surface font-bold mb-space-md text-tertiary-fixed-dim">Iconic Regions</h4>
+<ul class="space-y-2.5 font-body-sm text-body-sm text-inverse-on-surface/75">
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Volcanoes National Park (Rwanda)</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Bwindi Impenetrable Forest (Uganda)</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Maasai Mara Private Conservancies</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Serengeti &amp; Ngorongoro Crater</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Nyungwe Primeval Canopy (Rwanda)</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Lewa Wildlife Conservancy &amp; Samburu</a></li>
+</ul>
+</div>
+<!-- Column 3: Curated Portfolios -->
+<div>
+<h4 class="font-label-md text-xs tracking-widest uppercase text-inverse-on-surface font-bold mb-space-md text-tertiary-fixed-dim">Curated Portfolios</h4>
+<ul class="space-y-2.5 font-body-sm text-body-sm text-inverse-on-surface/75">
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Mountain Gorilla Habituation Treks</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Private Aviation &amp; Helicopter Safaris</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Ultra-Luxury Lodge Buyouts</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Great Migration Mara River Crossings</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Photographic Hide Safaris</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Conservation &amp; Veterinary Encounters</a></li>
+</ul>
+</div>
+<!-- Column 4: Direct Concierge Desks -->
+<div>
+<h4 class="font-label-md text-xs tracking-widest uppercase text-inverse-on-surface font-bold mb-space-md text-tertiary-fixed-dim">Direct Concierge Desks</h4>
+<div class="space-y-3 font-body-sm text-body-sm text-inverse-on-surface/80">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[16px] shrink-0 mt-0.5">location_on</span>
+<span>Kigali: Blvd de l'Umuganda, Kacyiru</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[16px] shrink-0 mt-0.5">location_on</span>
+<span>Nairobi: Karen Sanctuary Precinct</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[16px] shrink-0">call</span>
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="tel:+250788000000">+250 788 000 000 (KGL)</a>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[16px] shrink-0">call</span>
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="tel:+254700000000">+254 700 000 000 (NBO)</a>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[16px] shrink-0">mail</span>
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="mailto:concierge@amajo-africa.com">concierge@amajo-africa.com</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Bar & Accreditation / Carbon Badges -->
+<div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-body-sm text-inverse-on-surface/60 font-body-sm">
+<div class="flex flex-wrap items-center gap-space-sm text-xs">
+<span>© 2025 AMAJO Safaris Ltd. All rights reserved.</span>
+<span>•</span>
+<a class="hover:text-inverse-on-surface transition-colors" href="#">Privacy Non-Disclosure</a>
+<span>•</span>
+<a class="hover:text-inverse-on-surface transition-colors" href="#">Terms of Expedition</a>
+<span>•</span>
+<a class="hover:text-inverse-on-surface transition-colors" href="#">Gorilla Permit Guarantees</a>
+</div>
+<div class="flex items-center gap-4 text-xs">
+<span class="flex items-center gap-1 text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[15px]">eco</span>
+          100% Carbon Balanced Expeditions
+        </span>
+<span class="text-outline-variant">|</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">shield</span>
+          Licensed RDB &amp; KATO Tour Operator
+        </span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

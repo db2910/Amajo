@@ -1,0 +1,124 @@
+@import "tailwindcss" source("../");
+@import "tw-animate-css";
+@import "@fontsource-variable/playfair-display";
+@import "@fontsource-variable/plus-jakarta-sans";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--card);
+  --color-popover-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-cocoa: #2c140e;
+  --color-orange: #d95b26;
+  --color-gold: #d4a359;
+  --color-sage: #4a5d4e;
+  --color-sand: #efe8de;
+  --font-sans: "Plus Jakarta Sans Variable", Arial, sans-serif;
+  --font-display: "Playfair Display Variable", Georgia, serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --shadow-soft: 0 2px 8px rgb(44 20 14 / 0.04), 0 1px 2px rgb(44 20 14 / 0.02);
+  --shadow-lifted:
+    0 10px 24px rgb(44 20 14 / 0.07), 0 4px 8px rgb(44 20 14 / 0.03);
+  --shadow-floating:
+    0 20px 40px rgb(44 20 14 / 0.12), 0 8px 16px rgb(44 20 14 / 0.06);
+}
+
+:root {
+  --background: #fcf9f4;
+  --foreground: #2c140e;
+  --card: #ffffff;
+  --popover: #ffffff;
+  --popover-foreground: #2c140e;
+  --primary: #a43700;
+  --primary-foreground: #ffffff;
+  --secondary: #2c140e;
+  --secondary-foreground: #fcf9f4;
+  --muted: #f0ede9;
+  --muted-foreground: #66574e;
+  --accent: #efe8de;
+  --destructive: #ba1a1a;
+  --border: #e0d7cb;
+  --input: #8c7168;
+  --ring: #a43700;
+  --radius: 0.5rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 4px;
+  }
+  ::selection {
+    background: #fed0c5;
+    color: #2c140e;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply fixed top-3 left-3 z-[100] -translate-y-24 rounded-md bg-cocoa px-5 py-3 text-background focus:translate-y-0;
+  }
+  .display-title {
+    @apply text-[2.375rem] leading-[1.16] font-semibold tracking-tight md:text-[3.5rem];
+  }
+  .section-title {
+    @apply text-3xl leading-tight font-medium md:text-[2.5rem];
+  }
+  .eyebrow {
+    @apply text-xs leading-5 font-semibold tracking-[0.12em] uppercase;
+  }
+}
