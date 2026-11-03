@@ -11,8 +11,8 @@ Updated: 2026-11-03 (Africa/Johannesburg).
 - Repository: `https://github.com/db2910/Amajo.git`; `origin` configured from the URL supplied by the user.
 - Current branch: `main`. Initial inspection found no local commits or remotes. GitHub API and `ls-remote` confirmed the target repository is public and empty; no remote history needs merging.
 - Local author identity: `db2910 <120332415+db2910@users.noreply.github.com>`, using the verified GitHub login/user ID and a privacy-preserving noreply address.
-- Latest commit: Phase 1 baseline is being prepared with message `chore: complete AMAJO phase 1 foundation`.
-- Push verification: pending GitHub device sign-in; no push has been claimed. Phase 2 is gated on a verified push to `origin/main`.
+- Latest completed phase commit: `c223debb74fae79d2ddf5e15327a589f3212ce1d` — `chore: complete AMAJO phase 1 foundation`.
+- Push verification: GitHub device sign-in completed as `db2910`; local HEAD and `refs/heads/main` matched the commit above after pushing. Local `main` tracks `origin/main`. Documentation-only synchronization commits follow this phase baseline.
 - Pre-commit review: original references preserved byte-for-byte through Git attributes, build/dependency/environment/report/temporary paths ignored, `.env.example` contains only blank key placeholders and localhost, and staged credential-pattern checks found no matches.
 - Standing workflow: after each verified phase, review staged content for secrets, update both progress documents, commit, push and verify. Use feature branches/reviewed PRs for substantial changes where practical; never force-push or overwrite remote history.
 
@@ -101,7 +101,7 @@ Not performed: Firefox/Safari, screen-reader testing, full browser zoom, induced
 
 ## Exact next steps
 
-1. Complete GitHub device sign-in, create/push the Phase 1 baseline to `origin/main`, and verify remote hash/tracking. Phase 2 remains unstarted until that verification succeeds.
+1. GitHub prerequisite satisfied. Begin the authorized Phase 2 work on `feat/phase-2-homepage` after saving this synchronization record.
 2. Read both planning files and the relevant homepage screenshot/HTML plus bundled Next.js docs before changing code.
 3. Extend the public shell into the responsive navbar, accessible Destinations/Tours & Experiences dropdowns and mobile navigation.
 4. Continue the Phase 2 greeting, hero, URL-based tour search and homepage sections in roadmap order, reusing verified primitives.

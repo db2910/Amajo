@@ -418,7 +418,7 @@ Dependencies/blockers:
 
 Exact next task, for the next authorized phase: review the homepage reference and implement Phase 2 responsive public navigation, accessible destination/Tours & Experiences menus, and mobile navigation using the verified primitives. Then implement the greeting and homepage sections in Phase 2 order. Keep real submission behavior and protected dashboard work in their scheduled phases. Do not request credentials until work actually depends on them; never put secrets into these documents.
 
-GitHub gate added by the user: repository URL is now verified and `origin` configured; device authentication and the first Phase 1 commit/push are pending. Complete and verify this synchronization before beginning the authorized Phase 2 work.
+GitHub gate satisfied: `origin` is `https://github.com/db2910/Amajo.git`; device authentication succeeded and Phase 1 commit `c223deb` was pushed to `origin/main`, with matching local/remote hashes and upstream tracking verified. Phase 2 is now authorized to begin on a feature branch.
 
 ## 17. Progress report format and history
 
