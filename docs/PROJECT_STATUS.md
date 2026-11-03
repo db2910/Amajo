@@ -4,12 +4,12 @@ Updated: 2026-11-03 (Africa/Johannesburg).
 
 ## Current phase
 
-**Phase 1 — Project Foundation: complete and verified. Phase 2: not started.** Read `IMPLEMENTATION_PLAN.md` and this file before resuming. All later phase checklists remain unchecked.
+**Phases 1–2: complete and verified. Phase 2 is being committed/pushed for review; Phase 3 has not started.** Read `IMPLEMENTATION_PLAN.md` and this file before resuming. Later phase checklists remain unchecked.
 
 ## GitHub and version control
 
 - Repository: `https://github.com/db2910/Amajo.git`; `origin` configured from the URL supplied by the user.
-- Current branch: `main`. Initial inspection found no local commits or remotes. GitHub API and `ls-remote` confirmed the target repository is public and empty; no remote history needs merging.
+- Current branch: `feat/phase-2-homepage`, based on synchronized `main`/`origin/main` at `30b7684`. Initial inspection found no local commits or remotes. GitHub API and `ls-remote` confirmed the target repository was public and empty before the initial push; no remote history needed merging.
 - Local author identity: `db2910 <120332415+db2910@users.noreply.github.com>`, using the verified GitHub login/user ID and a privacy-preserving noreply address.
 - Latest completed phase commit: `c223debb74fae79d2ddf5e15327a589f3212ce1d` — `chore: complete AMAJO phase 1 foundation`.
 - Push verification: GitHub device sign-in completed as `db2910`; local HEAD and `refs/heads/main` matched the commit above after pushing. Local `main` tracks `origin/main`. Documentation-only synchronization commits follow this phase baseline.
@@ -17,6 +17,9 @@ Updated: 2026-11-03 (Africa/Johannesburg).
 - Standing workflow: after each verified phase, review staged content for secrets, update both progress documents, commit, push and verify. Use feature branches/reviewed PRs for substantial changes where practical; never force-push or overwrite remote history.
 
 ## Last completed work
+
+- Phase 2 completed: responsive desktop/mobile navigation, cycling/pauseable greeting, optimized local photography, typed search URLs and sample journey data, homepage editorial sections and cocoa footer. Later-page routes use explicit, noindex preview contracts; no database, quote submission, prices or reviews are fabricated.
+- Phase 2 verification: 19 unit tests, strict type checks, zero-warning ESLint, production build and all 22 Edge/Chromium browser tests passed. The final full browser run took 1.2 minutes. Follow-up screenshot capture waits for lazy images and disables transient CSS animations for useful visual evidence.
 
 - Provisioned checksum-verified portable Node 24.22.2, npm 11.19.1 and Git 2.56.0.windows.4 under `%LOCALAPPDATA%\Amajo\tools`; added their paths to the current user's PATH. Existing terminals may need restarting; `README.md` supplies a session initialization command.
 - Initialized Git on `main`; no commit or remote created. Manually scaffolded the application at the workspace root to preserve the existing docs and original Stitch exports.
@@ -61,6 +64,8 @@ All exact versions are in `package.json` and `package-lock.json`.
 
 ## Files created and modules modified
 
+- Phase 2: public header/footer, greeting/search and editorial section components; typed catalog/search contracts, navigation/route contracts and homepage read fixtures; explicit catch-all preview allowlist; five locally served photos; image-credit and route-contract docs; search unit tests and homepage browser tests. Brand ratio/focus and primary hover contrast were improved during testing. No dependencies were added.
+
 - Root configuration: package manifest/lockfile, strict TypeScript, Next, PostCSS, ESLint, shadcn aliases, Vitest/Playwright configs, npm settings, Node version, `.gitignore`, `.gitattributes`, `.env.example`, `AGENTS.md` and `README.md`.
 - `src/app`: global design tokens, root/public/admin layouts, minimal public/admin pages, `/foundation`, root error/global-error and not-found handlers.
 - `src/components`: owned UI primitives, foundation preview, public/admin shells, brand, Motion provider and layout primitives.
@@ -92,6 +97,17 @@ Commands ran with the provisioned Node/npm on PATH.
 
 Not performed: Firefox/Safari, screen-reader testing, full browser zoom, induced runtime crash/retry testing, live Supabase/RLS/authentication or production deployment/security checks. These are not Phase 1 features or are later QA coverage; no results are claimed for them.
 
+## Phase 2 verification — 2026-11-03
+
+- `npm.cmd run typecheck`: passed. Subsequent production builds also checked the final application TypeScript.
+- `npm.cmd run lint`: passed with zero warnings on the final source.
+- `npm.cmd test`: 19 passed across environment and search contracts. Empty/encoded/valid filters, invalid ranges, repeated/unknown values and query serialization covered.
+- `npm.cmd run build`: passed. Homepage/foundation/admin are static; the explicitly allowlisted later-page previews render validated query context on the server.
+- `PLAYWRIGHT_CHANNEL=msedge`, `PLAYWRIGHT_PORT=3100`, `npm.cmd run test:e2e`: 22 passed. Covers all roadmap widths, real desktop hover/click/keyboard menus, mobile groups/route closure, sticky background transition, greeting sequence/pause/reduced motion, full search URL/reload, rejected invalid queries, working internal navigation, local images/logo ratio, actual cocoa footer, 404 recovery, and axe A/AA scans including open menus/dialogs/drawer.
+- Visual artifacts: `test-results/foundation-public-and-admin-foundations-fit-360px-chromium/public.png`, corresponding `1440px` file, and `test-results/homepage-open-desktop-menu-22590-have-no-axe-A-AA-violations-chromium/{desktop-menu,mobile-navigation}.png`. Reports/screenshots remain ignored; source and image credits are committed instead. Desktop/mobile captures were compared with the original Stitch homepage and all section imagery reviewed.
+- Fixed findings: compact-logo optimizer rounding, low-contrast translucent primary hover, overly broad test selectors, and early screenshot captures of unloaded lazy images. No current Phase 2 application failure remains in tested paths.
+- The existing user development server on port 3000 was preserved. Test-owned production servers use 3100 and shut down after checks.
+
 ## Outstanding issues and later dependencies
 
 - Development tooling: Next's ESLint dependency chain includes the minimatch glob-amplification advisory [GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249). npm reports 16 moderate findings through that chain. ESLint 9.39.5 also emits an upstream deprecation notice. ESLint 10 was tested for installation compatibility and reverted because the selected Next configuration's React/import/accessibility plugins do not accept it. Avoid forced audit downgrades or incompatible minimatch major overrides. Reassess compatible upstream releases before production readiness. This does not affect the zero-finding production dependency audit or passing Phase 1 acceptance checks.
@@ -101,8 +117,8 @@ Not performed: Firefox/Safari, screen-reader testing, full browser zoom, induced
 
 ## Exact next steps
 
-1. GitHub prerequisite satisfied. Begin the authorized Phase 2 work on `feat/phase-2-homepage` after saving this synchronization record.
-2. Read both planning files and the relevant homepage screenshot/HTML plus bundled Next.js docs before changing code.
-3. Extend the public shell into the responsive navbar, accessible Destinations/Tours & Experiences dropdowns and mobile navigation.
-4. Continue the Phase 2 greeting, hero, URL-based tour search and homepage sections in roadmap order, reusing verified primitives.
-5. Run checks appropriate to those changes and update both progress documents. Keep database, real submissions and protected dashboard implementation in their assigned phases.
+1. Commit and push the verified Phase 2 feature branch and record matching local/remote hashes and review PR.
+2. Review/merge the Phase 2 PR. Main remains the Phase 1 baseline until that review is complete.
+3. In a subsequent authorized Phase 3 task, read both planning records and the country/tour references, then implement real destinations overview/country/attraction pages followed by tour discovery/detail/itineraries.
+4. Replace the corresponding explicit preview contracts only when their real behavior is implemented and verified. Keep supporting pages/forms in Phase 4 and Supabase/auth in Phase 5.
+5. Continue the required review, secret scan, documentation, commit, push and synchronization checks at every completed phase.

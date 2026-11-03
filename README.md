@@ -1,6 +1,6 @@
 # AMAJO — Essence of Africa
 
-Next.js 16 App Router foundation for the AMAJO public travel website and future administration system. Implementation is currently limited to Phase 1. Start with [the project status](docs/PROJECT_STATUS.md) and [implementation roadmap](docs/IMPLEMENTATION_PLAN.md).
+Next.js 16 App Router application for the AMAJO public travel website and future administration system. Phases 1–2 provide the foundation and responsive homepage. Start with [the project status](docs/PROJECT_STATUS.md) and [implementation roadmap](docs/IMPLEMENTATION_PLAN.md).
 
 ## Run locally
 
@@ -21,7 +21,9 @@ npm.cmd ci
 npm.cmd run dev
 ```
 
-Open `http://localhost:3000`. `/foundation` is the interactive design reference; `/admin` is an informational layout shell without authentication, private data or management actions. Phase 5 implements auth; Phase 6 implements the protected dashboard. The current foundation is marked noindex. No Phase 2 navigation, tour search or homepage sections have been implemented.
+Open `http://localhost:3000` for the homepage. `/foundation` is the interactive design reference; `/admin` is an informational layout shell without authentication, private data or management actions. Phase 5 implements auth; Phase 6 implements the protected dashboard. The development website remains noindex.
+
+The homepage includes responsive navigation, accessible menus/drawer, the multilingual greeting with pause/reduced-motion controls, URL-based tour search, destination/sample journey cards, experience/story/value sections, an honest testimonial empty state and the deep cocoa footer. Tours are explicitly labelled development concepts, with no invented prices or availability. Later-phase destinations, tour details, contact, policy and quote pages resolve to labelled previews. Search preferences are displayed from the URL; no inquiry is collected. See [route contracts](docs/PHASE_2_ROUTE_CONTRACTS.md) and [image credits](docs/IMAGE_CREDITS.md).
 
 No environment file is required for Phase 1. Copy `.env.example` to `.env.local` when configuration is needed. Leave Supabase values blank until real integration begins; a URL and publishable key must be supplied together. Never use a privileged key in any `NEXT_PUBLIC_` variable. Environment errors report variable names, not values.
 
