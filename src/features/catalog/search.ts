@@ -18,7 +18,17 @@ export const searchSchema = z
     minDays: z.coerce.number().int().min(1).max(60).optional(),
     maxDays: z.coerce.number().int().min(1).max(60).optional(),
     maxBudget: z.coerce.number().int().min(1).max(1000000).optional(),
-    sort: z.enum(["recommended", "duration", "price"]).optional(),
+    budget: z.enum(["budget", "mid-range", "luxury"]).optional(),
+    sort: z
+      .enum([
+        "recommended",
+        "newest",
+        "duration",
+        "price",
+        "price-asc",
+        "price-desc",
+      ])
+      .optional(),
     page: z.coerce.number().int().min(1).max(1000).optional(),
   })
   .refine(

@@ -51,7 +51,9 @@ test("mobile drawer expands country and experience groups and closes on navigati
     .click();
   await expect(page).toHaveURL("/destinations/rwanda");
   await expect(page.getByRole("dialog")).toHaveCount(0);
-  await expect(page.locator("main")).toContainText("Website preview");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "A thousand hills",
+  );
 });
 
 test("sticky navigation gains a solid background on scroll", async ({
@@ -69,7 +71,7 @@ test("sticky navigation gains a solid background on scroll", async ({
   ).toBe(0);
 });
 
-test("search generates the agreed parameters and the preview explains its state", async ({
+test("search generates the agreed parameters and the catalog handles unpriced concepts", async ({
   page,
 }) => {
   await page.goto("/");
@@ -96,12 +98,14 @@ test("search generates the agreed parameters and the preview explains its state"
     maxDays: "9",
     maxBudget: "5000",
   });
-  await expect(page.locator("main")).toContainText("Your search preferences");
+  await expect(page.locator("main")).toContainText("0 journey concepts");
   await expect(page.locator("main")).toContainText(
-    "No inquiry has been submitted",
+    "Unpriced journeys cannot match a maximum price",
   );
   await page.reload();
-  await expect(page.locator("main")).toContainText("Gorilla Trekking");
+  await expect(
+    page.getByRole("combobox", { name: "Experience", exact: true }).first(),
+  ).toHaveValue("gorilla-trekking");
 });
 
 test("invalid query parameters are rejected and unknown destination paths return 404", async ({

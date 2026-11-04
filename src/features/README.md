@@ -1,3 +1,3 @@
 # Feature boundaries
 
-Future catalog, content, inquiries, auth and media modules own their domain validation, repositories and actions. Keep database access server-only. Phase 1 has no data adapters or simulated business behavior. See the implementation roadmap before adding modules.
+Catalog owns the typed read repository interface, search/query behavior and quote-context links. Navigation owns public menu links and the explicit remaining Phase 4 preview contracts. Content, inquiries, auth and media modules remain scheduled for later phases. Keep future database access server-only; no business submission is simulated. See the implementation roadmap before adding modules.

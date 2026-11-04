@@ -5,13 +5,11 @@ import { Compass, ArrowLeft } from "lucide-react";
 import { Container, Section, Stack } from "@/components/layout/primitives";
 import { Button } from "@/components/ui/button";
 import { getRouteContract } from "@/features/navigation/route-contracts";
-import { parseTourSearch, experiences } from "@/features/catalog/search";
-
+import { catalog } from "@/features/catalog/repository";
 type Props = {
   params: Promise<{ path: string[] }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const route = getRouteContract((await params).path.join("/"));
   return {
@@ -19,7 +17,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     robots: { index: false, follow: false },
   };
 }
-
 export default async function FutureRoutePreview({
   params,
   searchParams,
@@ -27,23 +24,26 @@ export default async function FutureRoutePreview({
   const path = (await params).path.join("/");
   const contract = getRouteContract(path);
   if (!contract) notFound();
-  const query = path === "tours" ? parseTourSearch(await searchParams) : null;
-  const filters = query?.success ? query.data : null;
-  const selected = filters
-    ? Object.entries(filters).filter(
-        ([, value]) => value !== undefined && value !== "",
-      )
-    : [];
-  const labels: Record<string, string> = {
-    q: "Search",
-    country: "Country",
-    experience: "Experience",
-    minDays: "Minimum days",
-    maxDays: "Maximum days",
-    maxBudget: "Maximum budget (USD / person)",
-    sort: "Sort",
-    page: "Page",
-  };
+  const query = await searchParams;
+  const tour =
+    path === "request-a-quote" &&
+    typeof query.tour === "string" &&
+    query.tour.length <= 100
+      ? await catalog.tour(query.tour)
+      : undefined;
+  const country =
+    path === "request-a-quote" && typeof query.country === "string"
+      ? await catalog.destination(query.country)
+      : undefined;
+  const attraction =
+    country && typeof query.attraction === "string"
+      ? await catalog.attraction(country.slug, query.attraction)
+      : undefined;
+  const invalid =
+    path === "request-a-quote" &&
+    ((query.tour !== undefined && !tour) ||
+      (query.country !== undefined && !country) ||
+      (query.attraction !== undefined && !attraction));
   return (
     <Section>
       <Container>
@@ -54,46 +54,41 @@ export default async function FutureRoutePreview({
           <p className="text-lg text-muted-foreground">
             {contract.description}
           </p>
-          {query && !query.success && (
-            <p
-              role="alert"
-              className="rounded-lg border border-destructive p-4 text-destructive"
-            >
-              Some search options are invalid. Please return to the homepage and
-              choose your preferences again.
-            </p>
-          )}
-          {selected.length > 0 && (
+          {path === "request-a-quote" && (
             <div className="rounded-lg border bg-card p-6">
-              <h2 className="text-2xl">Your search preferences</h2>
-              <dl className="mt-5 grid gap-4 sm:grid-cols-2">
-                {selected.map(([key, value]) => (
-                  <div key={key}>
-                    <dt className="text-xs text-muted-foreground">
-                      {labels[key]}
-                    </dt>
-                    <dd className="mt-1 break-words font-medium capitalize">
-                      {key === "experience"
-                        ? experiences.find((item) => item.slug === value)?.name
-                        : String(value)}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-              <p className="mt-5 border-t pt-4 text-sm text-muted-foreground">
-                These preferences are in the page URL only. No inquiry has been
-                submitted.
+              <h2 className="text-2xl">Your journey inspiration</h2>
+              {invalid ? (
+                <p role="alert" className="mt-4 text-destructive">
+                  The selected journey or place is not recognized. Please return
+                  to the catalog and choose again.
+                </p>
+              ) : (
+                <p className="mt-4">
+                  {tour
+                    ? `Selected concept: ${tour.title}`
+                    : attraction
+                      ? `Selected place: ${attraction.name}, ${country?.name}`
+                      : country
+                        ? `Selected destination: ${country.name}`
+                        : "Explore a journey or destination to bring your inspiration here."}
+                </p>
+              )}
+              <p className="mt-4 text-sm text-muted-foreground">
+                Context is carried in the URL only. No inquiry has been
+                submitted, saved or sent. The form arrives in Phase 4 and
+                durable submission in Phase 5.
               </p>
             </div>
           )}
           <div className="flex flex-wrap gap-3">
             <Button asChild>
-              <Link href="/#destinations">
-                <ArrowLeft aria-hidden="true" /> Explore the homepage
+              <Link href="/tours">
+                <ArrowLeft aria-hidden="true" />
+                Explore journey ideas
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="/#tour-search">Choose your journey</Link>
+              <Link href="/destinations">Discover destinations</Link>
             </Button>
           </div>
         </Stack>

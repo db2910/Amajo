@@ -1,24 +1,44 @@
 # AMAJO project status
 
-Updated: 2026-11-03 (Africa/Johannesburg).
+Updated: 2026-11-04 (Africa/Johannesburg).
 
 ## Current phase
 
-**Phases 1–2: complete, verified and pushed. Phase 2 PR #1 is open for review; Phase 3 has not started.** Read `IMPLEMENTATION_PLAN.md` and this file before resuming. Later phase checklists remain unchecked.
+**Phase 3: implementation complete and verified on `feat/phase-3-destinations-tours`, awaiting user review. Phase 4 has not started.** Phases 1–2 are merged; PR #1 was confirmed merged on 2026-11-04 at `9565cf2`, local main fast-forwarded safely, then the Phase 3 branch created. Read `IMPLEMENTATION_PLAN.md` and this file before resuming. Later phase checklists remain unchecked.
 
 ## GitHub and version control
 
-- Repository: `https://github.com/db2910/Amajo.git`; `origin` configured from the URL supplied by the user.
-- Current branch: `feat/phase-2-homepage`, based on synchronized `main`/`origin/main` at `30b7684`. Initial inspection found no local commits or remotes. GitHub API and `ls-remote` confirmed the target repository was public and empty before the initial push; no remote history needed merging.
-- Local author identity: `db2910 <120332415+db2910@users.noreply.github.com>`, using the verified GitHub login/user ID and a privacy-preserving noreply address.
-- Phase 1 commit: `c223debb74fae79d2ddf5e15327a589f3212ce1d` — `chore: complete AMAJO phase 1 foundation`; main also includes synchronization docs at `30b7684`.
-- Latest completed implementation commit: `7549b3ae8740e31927b08a485d79fb76638aade3` — `feat: implement responsive navigation and homepage`. Documentation-only synchronization commits follow this implementation commit; use `git log -1` for the current documentation-inclusive HEAD.
-- Push verification: authenticated as `db2910`; local and remote feature branch hashes matched `7549b3a` after push, and the branch tracks `origin/feat/phase-2-homepage`. Phase 1 main synchronization was also verified. This status-only update is pushed as a follow-up commit and checked again at task completion.
-- Review PR: [#1 — responsive navigation and homepage](https://github.com/db2910/Amajo/pull/1), open against `main`, not merged. The homepage remains on the feature branch until reviewed/merged; no force-push or history rewrite was used.
-- Pre-commit review: original references preserved byte-for-byte through Git attributes, build/dependency/environment/report/temporary paths ignored, `.env.example` contains only blank key placeholders and localhost, and staged credential-pattern checks found no matches.
-- Standing workflow: after each verified phase, review staged content for secrets, update both progress documents, commit, push and verify. Use feature branches/reviewed PRs for substantial changes where practical; never force-push or overwrite remote history.
+- Repository: `https://github.com/db2910/Amajo.git`, remote `origin`; existing authenticated Git workflow retained, with credentials outside the repository.
+- Current branch: `feat/phase-3-destinations-tours`, created from synchronized `main`/`origin/main` at `9565cf20a6585093f6432c02255014da318aa0d7`. The initial working tree was clean. Fetch, switch to main and fast-forward-only integration succeeded without conflicts or discarding work.
+- Phase 2 [PR #1](https://github.com/db2910/Amajo/pull/1) was confirmed merged on 2026-11-04 before any Phase 3 implementation. No force-push or history rewrite was used.
+- Phase 1 foundation: `c223deb`; Phase 2 implementation: `7549b3a`, with documentation follow-ups through `f325a70` and merge `9565cf2`.
+- Phase 3 implementation is verified and staged for `feat: implement destinations and tour discovery`. Push and PR synchronization are the final delivery step; their verified result is recorded below after completion. Use `git log -1` for the documentation-inclusive HEAD.
+- Pre-commit review: 42 intended files; zero credential-pattern matches and zero sensitive paths. Original Stitch references and package manifests/lockfile are unchanged. Dependencies, environment secrets, build output, temporary files and test reports remain ignored; `.env.example` remains tracked with placeholders only.
+- Standing workflow: after each verified phase, review staged content for secrets, update both progress documents, commit, push and verify. Use feature branches/reviewed PRs for substantial changes; never force-push, overwrite remote history or automatically merge the Phase 3 PR.
 
-## Last completed work
+## Phase 3 completed work — 2026-11-04
+
+- Added `/destinations`, shared country guides for Rwanda/Uganda/Kenya, 15 correctly associated attraction pages, `/tours`, nine detailed journey concepts and `/experiences`. Only the corresponding Phase 3 previews were replaced; Phase 4 pages remain clearly labelled previews.
+- Implemented composable text/country/experience/duration/budget-style/maximum-price filters, sorting, counts, six-result pagination, URL persistence, browser history, clear/recovery states and strict invalid-input handling. Added optional categorical `budget` without changing numeric USD `maxBudget`; price ordering is offered only where configured prices exist. Current concepts intentionally have no prices.
+- Added a server-only asynchronous catalog repository boundary and typed country/attraction/experience/tour/media/itinerary contracts. Supports multi-country and multi-experience tours, attraction joins, ordered itinerary days/activities, optional meals/lodging notes and related tours. Supabase replacement remains Phase 5.
+- Added reusable cards, breadcrumb/hero/FAQ/CTA primitives, gallery, filter drawer and itinerary timeline. Quote links validate the selected concept/place in the remaining preview; no inquiry is submitted or fake success shown.
+- Added ten local editorial photos with documented sources/licenses. Public Creative Commons credits include source, license and resizing/cropping notices. Improved repeated images during screenshot review and corrected the Jinja concept to use actual Jinja imagery.
+- Files: six explicit catalog route modules, public catalog components, `src/data/catalog.ts`, `src/features/catalog/{types,search,query,repository,quote}.ts`, catalog unit/browser tests, Vitest alias configuration, updated homepage regression expectations, README/boundary docs and `docs/PHASE_3_CATALOG.md`/image credits.
+- Packages installed in Phase 3: none. Existing pinned stack and lockfile retained; Prettier 3 used ephemerally for formatting.
+
+## Phase 3 verification — 2026-11-04
+
+- `npm.cmd run typecheck`: passed; final production builds also passed strict TypeScript and route checks. An early concurrent dev-generated validator race cleared on regeneration; no application type error remains.
+- `npm.cmd run lint`: final source passed with zero warnings.
+- `npm.cmd test`: 38 passed. Tests cover relations/ordered days, combined filters, full attraction names, secondary countries/experiences, inclusive money comparisons with test-only prices, deterministic sorting/pagination, invalid input and quote URLs. Initial missing Vitest alias resolved in configuration.
+- `npm.cmd run build`: final source passed. Generated all three countries and 15 attraction pages; destination/experience overviews are static, search and tour details server-rendered.
+- `PLAYWRIGHT_CHANNEL=msedge`, `PLAYWRIGHT_PORT=3100`, `npm.cmd run test:e2e`: full 33 passed in 4.4m. After the final Jinja image/credit refinement, `npm.cmd run test:e2e -- catalog.spec.ts`: 12 passed in 1.5m. The first full run had one whitespace-sensitive link locator failure; corrected and rerun successfully.
+- Browser coverage: eight representative catalog pages at 360/390/768/1024/1440px; no horizontal overflow or page errors in those journeys; all 15 attraction/nine tour HTTP responses; correct 404s for unknown/mismatched records; combined filters, refresh/back/forward, sorting, pagination and recovery; keyboard itinerary, gallery and filter drawer, Escape/focus restoration; related links and quote context. Axe A/AA scans passed on tested mobile/desktop pages and gallery/drawer states, including public license credits. This is not a complete accessibility certification.
+- Visual review: desktop/mobile country, tour listing and trip detail screenshots plus all ten new source photos inspected against the country/trip Stitch references. Current captures: ignored `test-results/catalog-catalog-layouts-and-accessibility-at-{360,1440}px-chromium/` with `-destinations-rwanda.png`, `-tours.png` and `-tours-kenya-savanna-and-sea.png`. Browser runs replace previous artifacts.
+- `npm.cmd audit --omit=dev --json`: zero production dependency vulnerabilities. No dependency inputs changed. Existing development-only lint advisory remains below.
+- Existing user dev server on 3000 preserved; test-owned production servers on 3100 shut down after verification. No production deployment, Supabase/authentication, business submission, Firefox/Safari or manual screen-reader result is claimed.
+
+## Earlier phase work (historical)
 
 - Phase 2 completed: responsive desktop/mobile navigation, cycling/pauseable greeting, optimized local photography, typed search URLs and sample journey data, homepage editorial sections and cocoa footer. Later-page routes use explicit, noindex preview contracts; no database, quote submission, prices or reviews are fabricated.
 - Phase 2 verification: 19 unit tests, strict type checks, zero-warning ESLint, production build and all 22 Edge/Chromium browser tests passed. The final full browser run took 1.2 minutes. Follow-up screenshot capture waits for lazy images and disables transient CSS animations for useful visual evidence.
@@ -120,8 +140,8 @@ Not performed: Firefox/Safari, screen-reader testing, full browser zoom, induced
 
 ## Exact next steps
 
-1. Review/merge [Phase 2 PR #1](https://github.com/db2910/Amajo/pull/1). Main remains the Phase 1 baseline until that review is complete. Keep the local feature branch or run `.\dev.cmd` there to preview the new homepage.
-2. Confirm the reviewed PR has been merged before basing Phase 3 work on main; do not overwrite either branch's history.
-3. In a subsequent authorized Phase 3 task, read both planning records and the country/tour references, then implement real destinations overview/country/attraction pages followed by tour discovery/detail/itineraries.
-4. Replace the corresponding explicit preview contracts only when their real behavior is implemented and verified. Keep supporting pages/forms in Phase 4 and Supabase/auth in Phase 5.
-5. Continue the required review, secret scan, documentation, commit, push and synchronization checks at every completed phase.
+1. Review and accept the Phase 3 feature PR, then merge through the reviewed GitHub workflow. Do not automatically merge it.
+2. Run `.\dev.cmd` on this feature branch and review `/destinations`, the country/attraction guides, `/tours`, individual concepts and `/experiences`.
+3. Begin Phase 4 supporting pages and validated form UI only after Phase 3 is reviewed and accepted; durable inquiry delivery stays in Phase 5.
+4. Replace only the relevant remaining previews as real behavior is implemented. Keep auth, dashboard and CMS work in their scheduled phases.
+5. Continue review, secret scan, documentation, commit, push and synchronization checks at every completed phase.
