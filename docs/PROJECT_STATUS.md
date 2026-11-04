@@ -4,7 +4,7 @@ Updated: 2026-11-04 (Africa/Johannesburg).
 
 ## Current phase
 
-**Phase 3: implementation complete and verified on `feat/phase-3-destinations-tours`, awaiting user review. Phase 4 has not started.** Phases 1–2 are merged; PR #1 was confirmed merged on 2026-11-04 at `9565cf2`, local main fast-forwarded safely, then the Phase 3 branch created. Read `IMPLEMENTATION_PLAN.md` and this file before resuming. Later phase checklists remain unchecked.
+**Phase 3: complete, verified and pushed on `feat/phase-3-destinations-tours`; [PR #2](https://github.com/db2910/Amajo/pull/2) is open for review, not merged. Phase 4 has not started.** Phases 1–2 are merged; PR #1 was confirmed merged on 2026-11-04 at `9565cf2`, local main fast-forwarded safely, then the Phase 3 branch created. Read `IMPLEMENTATION_PLAN.md` and this file before resuming. Later phase checklists remain unchecked.
 
 ## GitHub and version control
 
@@ -12,7 +12,8 @@ Updated: 2026-11-04 (Africa/Johannesburg).
 - Current branch: `feat/phase-3-destinations-tours`, created from synchronized `main`/`origin/main` at `9565cf20a6585093f6432c02255014da318aa0d7`. The initial working tree was clean. Fetch, switch to main and fast-forward-only integration succeeded without conflicts or discarding work.
 - Phase 2 [PR #1](https://github.com/db2910/Amajo/pull/1) was confirmed merged on 2026-11-04 before any Phase 3 implementation. No force-push or history rewrite was used.
 - Phase 1 foundation: `c223deb`; Phase 2 implementation: `7549b3a`, with documentation follow-ups through `f325a70` and merge `9565cf2`.
-- Phase 3 implementation is verified and staged for `feat: implement destinations and tour discovery`. Push and PR synchronization are the final delivery step; their verified result is recorded below after completion. Use `git log -1` for the documentation-inclusive HEAD.
+- Latest implementation commit: `efa7c3897da9dae06b64a734fd0e01305308819d` — `feat: implement destinations and tour discovery`. Push succeeded with matching local/remote feature branch hashes and upstream `origin/feat/phase-3-destinations-tours` verified. A documentation-only synchronization commit follows; use `git log -1` for the current documentation-inclusive HEAD.
+- Review: [Phase 3 PR #2](https://github.com/db2910/Amajo/pull/2), open against `main`, not merged. The follow-up synchronization record is committed/pushed and its head verified again at task completion.
 - Pre-commit review: 42 intended files; zero credential-pattern matches and zero sensitive paths. Original Stitch references and package manifests/lockfile are unchanged. Dependencies, environment secrets, build output, temporary files and test reports remain ignored; `.env.example` remains tracked with placeholders only.
 - Standing workflow: after each verified phase, review staged content for secrets, update both progress documents, commit, push and verify. Use feature branches/reviewed PRs for substantial changes; never force-push, overwrite remote history or automatically merge the Phase 3 PR.
 
@@ -133,6 +134,8 @@ Not performed: Firefox/Safari, screen-reader testing, full browser zoom, induced
 
 ## Outstanding issues and later dependencies
 
+- Phase 3 implementation has no unresolved failure in tested paths; business confirmation and publication review remain required. Some attraction images are clearly captioned regional illustrations; confirm approved place-specific assets before publication. Lake Kivu provenance/tool limits and all image licenses are documented in `IMAGE_CREDITS.md`.
+
 - Development tooling: Next's ESLint dependency chain includes the minimatch glob-amplification advisory [GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249). npm reports 16 moderate findings through that chain. ESLint 9.39.5 also emits an upstream deprecation notice. ESLint 10 was tested for installation compatibility and reverted because the selected Next configuration's React/import/accessibility plugins do not accept it. Avoid forced audit downgrades or incompatible minimatch major overrides. Reassess compatible upstream releases before production readiness. This does not affect the zero-finding production dependency audit or passing Phase 1 acceptance checks.
 - Framework-generated instructions and temporary browser color-environment warnings are not application failures. No unresolved application defect was observed in the checked Phase 1 flows.
 - Supabase/auth needed in Phase 5, protected staff dashboard in Phase 6, email provider in Phase 8, hosting/domain/operations in Phase 10.
@@ -140,7 +143,7 @@ Not performed: Firefox/Safari, screen-reader testing, full browser zoom, induced
 
 ## Exact next steps
 
-1. Review and accept the Phase 3 feature PR, then merge through the reviewed GitHub workflow. Do not automatically merge it.
+1. Review and accept [Phase 3 PR #2](https://github.com/db2910/Amajo/pull/2), then merge through the reviewed GitHub workflow. Do not automatically merge it.
 2. Run `.\dev.cmd` on this feature branch and review `/destinations`, the country/attraction guides, `/tours`, individual concepts and `/experiences`.
 3. Begin Phase 4 supporting pages and validated form UI only after Phase 3 is reviewed and accepted; durable inquiry delivery stays in Phase 5.
 4. Replace only the relevant remaining previews as real behavior is implemented. Keep auth, dashboard and CMS work in their scheduled phases.
