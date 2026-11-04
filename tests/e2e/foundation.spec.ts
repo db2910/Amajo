@@ -17,6 +17,7 @@ for (const width of [360, 390, 768, 1024, 1440]) {
       ).toBe(true);
       const logo = page
         .getByRole("link", { name: "AMAJO — Essence of Africa, home" })
+        .first()
         .locator("img");
       await expect(logo).toBeVisible();
       expect(
@@ -31,11 +32,29 @@ for (const width of [360, 390, 768, 1024, 1440]) {
       );
       expect(ratio).toBeCloseTo(747 / 731, 2);
       if (width === 360 || width === 1440) {
+        if (route === "/") {
+          for (const image of await page.locator("main img").all()) {
+            await image.scrollIntoViewIfNeeded();
+            await expect
+              .poll(() =>
+                image.evaluate(
+                  (element) => (element as HTMLImageElement).naturalWidth,
+                ),
+              )
+              .toBeGreaterThan(0);
+          }
+          await page.evaluate(() => window.scrollTo(0, 0));
+          await expect(page.getByTestId("public-header")).toHaveAttribute(
+            "data-overlay",
+            "true",
+          );
+        }
         await page.screenshot({
           path: testInfo.outputPath(
             `${route === "/" ? "public" : route.slice(1)}.png`,
           ),
           fullPage: true,
+          animations: "disabled",
         });
       }
     }
@@ -128,6 +147,7 @@ test("foundations and overlays have no WCAG A/AA axe violations", async ({
   await page.goto("/foundation");
   for (const label of ["Preview dialog", "Preview drawer"]) {
     await page.getByRole("button", { name: label, exact: true }).click();
+    await expect(page.getByRole("dialog")).toHaveCSS("opacity", "1");
     expect(
       (
         await new AxeBuilder({ page })

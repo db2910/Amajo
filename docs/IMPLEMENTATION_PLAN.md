@@ -8,7 +8,7 @@ Build a secure, responsive East African tours website and administrative CMS for
 
 This document is the implementation roadmap. Read it with `PROJECT_STATUS.md` before every resumed session. Preserve the original Stitch exports. Review the relevant screenshot and HTML before each visual implementation. Execute phases in order, verify behavior, then update both documents. A rendered screen is not a completed feature. Check a task only when its acceptance criteria are met; describe partial work separately.
 
-Checklist convention: `- [ ]` means not started or incomplete; `- [x]` means verified completed. Phase 1 is complete and verified. Phase 2 has not started.
+Checklist convention: `- [ ]` means not started or incomplete; `- [x]` means verified completed. Phases 1–2 are complete, verified and pushed. Phase 1 is on `main`; Phase 2 is on `feat/phase-2-homepage` with PR #1 open for review. Phase 3 has not started.
 
 Launch scope: three countries, tours and experiences, attractions, services, company information, quote/contact intake, and a complete CMS and inquiry workflow. No customer accounts, checkout, payments, live booking inventory, permit procurement, aviation integrations, satellite tracking, currency conversion, or newsletter delivery in the baseline. These appear in reference artwork but are separate products. Journal/blog routes are conditional on business scope confirmation; their schema and implementation slot are reserved below. Greeting animation does not imply a translated website.
 
@@ -247,7 +247,7 @@ Data contracts, schema, publication rules and permissions are defined in this pl
 
 ### Phase 1 — Project Foundation
 
-Dependencies satisfied: planning complete; checksum-verified user-local Node 24.22.2/npm 11.19.1 and Git 2.56.0.windows.4 provisioned. Git initialized on `main`; no commit or remote created.
+Dependencies satisfied: planning complete; checksum-verified user-local Node 24.22.2/npm 11.19.1 and Git 2.56.0.windows.4 provisioned. Git was initialized on `main` during scaffolding and subsequently connected and pushed to GitHub as recorded below.
 
 - [x] Review existing directory, reference exports, screenshots and logo.
 - [x] Define proposed architecture, domain contracts and design direction in this plan.
@@ -267,14 +267,16 @@ Dependencies: P1; typed published-content fixture contracts.
 
 User-added prerequisite: push the verified Phase 1 baseline to `origin/main` at `https://github.com/db2910/Amajo.git` before Phase 2 implementation. The public footer must use deep cocoa `#2c140e`. After every verified phase, review for secrets, update both planning records, commit, push and verify synchronization; use feature branches and reviewed PRs for substantial work where practical and never force-push.
 
-- [ ] Responsive navbar, country dropdown, Tours & Experiences dropdown and mobile navigation.
-- [ ] Reduced-motion-aware Hello/Muraho/Habari/Bonjour greeting.
-- [ ] Hero and URL-based tour search.
-- [ ] Featured destination/tour cards, brand values, verified-or-clearly-development testimonials and quote CTA.
-- [ ] Footer with functional routes and verified contact placeholders isolated from production.
-- [ ] Check navigation/focus, search parameters, responsive layout, image sizing, typecheck/lint/build.
+- [x] Responsive navbar, country dropdown, Tours & Experiences dropdown and mobile navigation.
+- [x] Reduced-motion-aware Hello/Muraho/Habari/Bonjour greeting.
+- [x] Hero and URL-based tour search.
+- [x] Featured destination/tour cards, brand values, verified-or-clearly-development testimonials and quote CTA.
+- [x] Footer with functional routes and verified contact placeholders isolated from production.
+- [x] Check navigation/focus, search parameters, responsive layout, image sizing, typecheck/lint/build.
 
 Files/modules: public layout/header/footer, homepage sections, cards, catalog contracts/fixtures. Deliverable: cohesive homepage and navigation. Acceptance: no dead controls, valid search URLs, accessible menus, no horizontal overflow. Full catalog results are verified in P3; live content read acceptance follows P5. Next: catalog pages.
+
+Verified 2026-11-03: 19 unit tests, zero-warning ESLint, strict route/type checks, production build, and 22 Edge/Chromium browser tests passed. Browser coverage includes all five roadmap widths, desktop hover/click/keyboard menus, mobile expandable groups/navigation, scroll transition, greeting order/pause/reduced motion, query generation/reload/invalid input, valid internal route contracts, all homepage images, logo proportions, cocoa footer, 404 recovery and axe A/AA checks including open navigation/dialogs. Placeholder routes are explicitly described in `docs/PHASE_2_ROUTE_CONTRACTS.md`; they are not Phase 3/4 completion. Testimonials stay empty pending verified consent; missing contacts/social accounts remain honest launch placeholders. Original design exports are unchanged. Photography is locally served with source/license attribution in `docs/IMAGE_CREDITS.md`. No dependency was added for Phase 2.
 
 ### Phase 3 — Destinations and Tours
 
@@ -405,7 +407,7 @@ Deliverable: deployed, monitored site and handed-over CMS. Acceptance: productio
 
 ## 16. Current progress, known issues and next work
 
-Current phase: Phase 1 foundation complete. Toolchain: Node 24.22.2, npm 11.19.1 and Git 2.56.0.windows.4. Completed functionality: runnable Next.js 16.4.4 application, Tailwind v4/shadcn primitives, canonical design system and self-hosted typography, separate public/admin layout shells, environment validation, error/not-found handling and passing foundation checks. No application implementation is currently in progress. Phase 2 and all later phases remain pending; Phase 2 has not started.
+Current phase: Phase 2 navigation/homepage complete, verified and pushed as `7549b3a` on `feat/phase-2-homepage`; [PR #1](https://github.com/db2910/Amajo/pull/1) is open for review and has not been merged. Phase 1 is already synchronized to GitHub `main`. Completed functionality includes the foundation plus responsive public navigation, multilingual hero, typed URL search, destination/sample tour cards, experience/story/value sections, testimonial empty state, final CTA and cocoa footer. Phase 3 and all later implementation phases remain pending. No live database, quote submission or staff dashboard behavior is claimed.
 
 Known issues: npm audit reports 16 moderate development-only findings in the Next/ESLint lint dependency chain, rooted in the minimatch glob-amplification advisory. Production dependency audit reports zero vulnerabilities. ESLint 9.39.5 is deprecated upstream but retained because the selected Next configuration's React/import/accessibility plugins reject ESLint 10; an attempted upgrade was reverted rather than leaving invalid peers. Do not force npm audit's proposed incompatible downgrades or a cross-major minimatch override. Track compatible upstream updates before production readiness. Backend/authentication remain intentionally unimplemented; `/admin` contains only an informational layout shell, no private data or management actions. Original reference defects and unverified business content still need resolution in their corresponding phases.
 
@@ -416,7 +418,7 @@ Dependencies/blockers:
 3. Business-approved contacts/content, image rights and conditional journal scope are needed before content publication.
 4. Email provider/domain verification is needed for P8 delivery; hosting/domain/secrets and operational owner are needed for P10.
 
-Exact next task, for the next authorized phase: review the homepage reference and implement Phase 2 responsive public navigation, accessible destination/Tours & Experiences menus, and mobile navigation using the verified primitives. Then implement the greeting and homepage sections in Phase 2 order. Keep real submission behavior and protected dashboard work in their scheduled phases. Do not request credentials until work actually depends on them; never put secrets into these documents.
+Exact next task: review/merge Phase 2 PR #1. After review and a subsequent Phase 3 authorization, implement destinations overview/country/attraction pages, then tour listing/filtering/detail pages and itineraries. Replace only the corresponding preview route contracts as real pages become available. Keep real submission behavior and protected dashboard work in their scheduled phases. Never put credentials in these documents.
 
 GitHub gate satisfied: `origin` is `https://github.com/db2910/Amajo.git`; device authentication succeeded and Phase 1 commit `c223deb` was pushed to `origin/main`, with matching local/remote hashes and upstream tracking verified. Phase 2 is now authorized to begin on a feature branch.
 
@@ -429,3 +431,7 @@ For each completed phase record: Phase Completed; Implemented; Verification (act
 2026-11-03 — **Phase Completed:** Phase 1 — Project Foundation. **Implemented:** pinned local Next.js 16/TypeScript/Tailwind v4/shadcn application, reusable design system, self-hosted fonts and original logo copy, public/admin layout foundations, environment validation, error boundaries, setup documentation and meaningful foundation tests. **Verification:** clean lockfile install, typecheck, zero-warning ESLint, 8 unit tests, production build and 12 Edge/Chromium browser tests passed. Fixed malformed-URL validation and field alignment during verification. **Outstanding Issues:** development-only lint dependency advisory/deprecation; no claims of database/auth, Firefox/Safari, screen-reader or complete production security verification. **Next Step:** Phase 2 navigation and homepage; not started.
 
 2026-11-03 — Phase 1 startup follow-up: reproduced missing npm command in an existing process PATH despite a valid installed runtime and persisted user PATH. Added `dev.cmd` and clearer README instructions; verified launcher startup without a manual PATH prefix and HTTP 200 for `/foundation`. Phase 2 remains unstarted.
+
+2026-11-03 — **Phase Completed:** Phase 2 — Navigation and Homepage. **Implemented:** responsive desktop menus/mobile drawer, sticky overlay header, accessible cycling greeting with pause/reduced motion, photo hero, typed search URL contract, editorial destinations/sample tours, six experiences, company philosophy/values, verified-only testimonial renderer, closing CTA and cocoa footer. **Verification:** 19 unit tests, strict type checks, ESLint/build and 22 browser tests passed; fixed optimized-logo rounding, primary hover contrast and overly broad test selectors. Visual evidence includes desktop/mobile homepage and navigation captures. **Outstanding Issues:** detailed content pages remain explicitly labelled previews until Phases 3–4; no fake offers, contact details, reviews or live submission behavior. Existing lint dependency advisory remains. **Next Step:** push and review this feature branch, then Phase 3 in a subsequent task.
+
+2026-11-03 — Phase 2 synchronization: `7549b3a` pushed with local/remote feature hashes and upstream tracking verified. PR #1 opened against main for review, without merging or rewriting history. Final production dependency audit is clear; final copy/visual refinement passed build/lint and three targeted screenshot/navigation checks. Review/merge is the next task; Phase 3 remains unstarted.

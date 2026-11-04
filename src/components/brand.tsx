@@ -6,7 +6,7 @@ export function Brand({ compact = false }: { compact?: boolean }) {
     <Link
       href="/"
       aria-label="AMAJO — Essence of Africa, home"
-      className="inline-flex w-fit shrink-0 items-center gap-3 rounded-md"
+      className="inline-flex w-fit shrink-0 items-center gap-3 rounded-md focus-visible:outline-current"
     >
       <Image
         src="/brand/amajo-logo.png"
@@ -14,6 +14,7 @@ export function Brand({ compact = false }: { compact?: boolean }) {
         width={747}
         height={731}
         sizes={compact ? "52px" : "72px"}
+        style={{ aspectRatio: "747 / 731" }}
         priority
         className={
           compact ? "h-auto w-[52px] rounded-md" : "h-auto w-[72px] rounded-md"
