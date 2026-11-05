@@ -107,6 +107,12 @@ export function PublicFooter() {
               Terms
             </Link>
             <Link
+              href="/permit-policy"
+              className="inline-flex min-h-11 items-center hover:text-gold focus-visible:outline-background"
+            >
+              Permit planning
+            </Link>
+            <Link
               href="/foundation"
               className="inline-flex min-h-11 items-center hover:text-gold focus-visible:outline-background"
             >
