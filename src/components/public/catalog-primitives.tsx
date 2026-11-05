@@ -287,9 +287,9 @@ export function QuoteCTA({
           <p className="eyebrow text-gold">A journey shaped around you</p>
           <h2 className="section-title mt-4 max-w-2xl">{title}</h2>
           <p className="mt-5 max-w-xl text-background/85">
-            Save a little inspiration for your own adventure. Our quote planning
-            form is being prepared; this link carries your selected context
-            without submitting a request.
+            Bring your inspiration into our three-step journey planner. Your
+            selected context carries through; sending will open when the inquiry
+            service is connected.
           </p>
           <Button asChild className="mt-7">
             <Link href={href}>

@@ -178,7 +178,8 @@ export function PublicHeader() {
                     href={link.href}
                     className={cn(
                       navItem,
-                      pathname === link.href &&
+                      (pathname === link.href ||
+                        pathname.startsWith(`${link.href}/`)) &&
                         "underline decoration-primary decoration-2 underline-offset-8",
                     )}
                     aria-current={pathname === link.href ? "page" : undefined}

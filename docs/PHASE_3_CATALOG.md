@@ -15,7 +15,7 @@ Business policy confirmed by the user on 2026-11-05: every tour longer than one 
 - Kenya: `maasai-mara`, `amboseli`, `tsavo`, `nairobi`, `kenyan-coast`.
 - `/tours`; `/tours/[slug]`: nine concepts; unknown slugs return 404.
 - `/experiences`: all six taxonomy values link into filtered tours.
-- `/request-a-quote?tour=[slug]`: validates the selected concept against the repository and displays its title in the remaining preview. Country/attraction CTAs likewise validate associated records. Invalid or repeated identifiers show an error; nothing is submitted, saved or sent.
+- `/request-a-quote?tour=[slug]`: Phase 4 now validates the concept against the repository and prefills the three-step form with countries, experiences and travel style, while displaying its title and duration. Country/attraction CTAs also validate associated records. Invalid or repeated identifiers reject supplied context together; nothing is submitted, saved or sent. See [Phase 4 contracts](PHASE_4_PUBLIC_PAGES.md).
 
 ## Search
 
@@ -35,4 +35,4 @@ Native disclosures implement itineraries and FAQs. The Radix gallery and mobile 
 
 Country and attraction introductions were checked against [Visit Rwanda](https://visitrwanda.com/tourism/destinations/), [Uganda Wildlife Authority](https://ugandawildlife.org/national-parks/), [Explore Uganda](https://exploreuganda.com/) and [Kenya Wildlife Service](https://kws.go.ke/parks/) on 2026-11-04. Weather, sightings, access, permits, prices and border/health requirements are not guaranteed. General planning prompts are not current legal or medical advice; no such detailed advice is published. Revalidate business content, rights and activity arrangements before production release.
 
-The development website remains noindex. Phase 4 supporting pages/forms and Phase 5 durable intake/published reads retain their scheduled acceptance gates.
+The development website remains noindex. Phase 4 supplies supporting pages and form UI; Phase 5 durable intake/published reads retain their scheduled acceptance gates.

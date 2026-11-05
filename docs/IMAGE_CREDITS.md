@@ -33,3 +33,7 @@ Downloaded directly from the publishers' image CDNs as responsive-size JPEGs and
 Catalog galleries reuse these and Phase 2 photographs with captions naming their actual location. Where a photograph illustrates a broader region rather than the named attraction, the page explains that distinction; these images do not verify an AMAJO itinerary, property, partnership or wildlife guarantee. Original Stitch exports remain untouched.
 
 `jinja-nile.jpg`: Dror Feitelson, [Jinja source of Nile](https://commons.wikimedia.org/wiki/File:Jinja_source_of_Nile.jpg), Uganda. Selected [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) from the source's dual-license grant; publisher's 1280px derivative, responsive display resizes/crops. This image and adapted images remain under that license; public source/license/change credits accompany the card, hero, gallery and itinerary uses. No endorsement implied.
+
+## Phase 4 reuse — 2026-11-05
+
+Services, About, Contact and the quote summary reuse the existing local photos and their source records above. No new photographs were downloaded or generated. Service galleries retain visible source/license/change credits for Creative Commons media. City and landscape imagery illustrates destinations and setting preferences; it does not depict an approved office, airport transfer vehicle, meeting venue or reserved property. Accommodation-arrangement images are explicitly setting inspiration. Verified venue/property/team photography remains a publication dependency. Original Stitch reference images are preserved.

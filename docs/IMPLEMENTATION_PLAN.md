@@ -8,7 +8,7 @@ Build a secure, responsive East African tours website and administrative CMS for
 
 This document is the implementation roadmap. Read it with `PROJECT_STATUS.md` before every resumed session. Preserve the original Stitch exports. Review the relevant screenshot and HTML before each visual implementation. Execute phases in order, verify behavior, then update both documents. A rendered screen is not a completed feature. Check a task only when its acceptance criteria are met; describe partial work separately.
 
-Checklist convention: `- [ ]` means not started or incomplete; `- [x]` means verified completed. Phases 1–2 are complete and merged into `main`. PR #1 merge was verified on 2026-11-04 at `9565cf2`; local main fast-forwarded and `feat/phase-3-destinations-tours` created. Phase 3 implementation and acceptance checks are complete and pushed; [PR #2](https://github.com/db2910/Amajo/pull/2) awaits user review, not merged. Phase 4 has not started.
+Checklist convention: `- [ ]` means not started or incomplete; `- [x]` means verified completed. Phases 1–3 are merged into `main`. Phase 3 [PR #2](https://github.com/db2910/Amajo/pull/2) merge was verified on 2026-11-05 at `542bb2f`; local main fast-forwarded safely before creating `feat/phase-4-public-pages`. Phase 4 implementation and acceptance checks are complete, awaiting feature-branch PR review. Phase 5 has not started.
 
 Launch scope: three countries, tours and experiences, attractions, services, company information, quote/contact intake, and a complete CMS and inquiry workflow. No customer accounts, checkout, payments, live booking inventory, permit procurement, aviation integrations, satellite tracking, currency conversion, or newsletter delivery in the baseline. These appear in reference artwork but are separate products. Journal/blog routes are conditional on business scope confirmation; their schema and implementation slot are reserved below. Greeting animation does not imply a translated website.
 
@@ -299,14 +299,16 @@ Verified 2026-11-04: strict typecheck, zero-warning ESLint, final production bui
 
 Dependencies: P3; quote/contact schemas, approved content structure.
 
-- [ ] Services overview and detail pages, About and Contact.
-- [ ] Quote form sections, progressive validation, prefill and confirmation route.
-- [ ] Contact form, privacy/terms/permit pages and verified contact actions.
-- [ ] Resolve journal scope; implement public articles only if included.
-- [ ] Verify form validation/keyboard behavior; keep submission unavailable until durable P5 integration.
-- [ ] Run checks and responsive review against references.
+- [x] Services overview and ten detail pages, About and Contact.
+- [x] Quote form sections, progressive validation, recognized prefill and server-gated confirmation route.
+- [x] Contact form and draft privacy/terms/permit pages; conditional contact actions prepared, no unverified channels published.
+- [x] Journal excluded from current scope without business opt-in; no article routes/navigation exposed.
+- [x] Verify form validation, state preservation and keyboard behavior; sending stays unavailable until durable P5 integration.
+- [x] Run checks and responsive review against references.
 
 Files/modules: supporting routes, quote/contact components, validation schemas, policy templates. Deliverable: public page structure and validated form UI. Acceptance: forms preserve input on error, show accurate delivery state, and contain no invented policies/business claims. Production form acceptance is explicitly deferred to P5. Next: backend.
+
+Verified 2026-11-05: strict typecheck, zero-warning ESLint, 67 unit tests and final production build passed. The full Edge/Chromium run passed all 41 existing regression checks and 14 of 15 new checks; corrected the remaining no-JavaScript notice and improved touched-date revalidation, then all 15 Phase 4 checks passed on the final source (1.2m). Coverage includes all roadmap widths, ten service routes/404s, keyboard gallery/focus, form errors/step preservation/date/count/consent/phone rules, every tour prefill and rejected context, unavailable Send/no POST, disabled controls without JavaScript, forged confirmation and draft/noindex policy pages, plus tested axe A/AA scans. Screenshots of public pages and form steps reviewed at 360/1440px. No packages/assets added or original references changed. Contacts, biographies, service publication and policies await business approval; fixtures and disabled delivery remain explicit. See `PHASE_4_PUBLIC_PAGES.md`. Phase 5 requires Phase 4 review and acceptance first.
 
 ### Phase 5 — Database and Backend
 
@@ -411,22 +413,24 @@ Deliverable: deployed, monitored site and handed-over CMS. Acceptance: productio
 
 ## 16. Current progress, known issues and next work
 
-Current phase: Phase 3 destinations and tour discovery complete, including verified 2026-11-05 centered heroes, enlarged greeting, photographic tours hero and included multi-day accommodation, on `feat/phase-3-destinations-tours`; [PR #2](https://github.com/db2910/Amajo/pull/2) is open for review and has not been merged. Phase 2 PR #1 is merged at `9565cf2`; local main was safely synchronized first. Completed functionality includes country/attraction discovery, typed catalog relationships, working URL search/filter/sort/pagination, individual itineraries/galleries/FAQs/related tours, validated quote-context links and experiences. Phase 4 has not started. Live data, submitted inquiries and staff management remain later dependencies.
+Current phase: Phase 4 supporting pages and inquiry interfaces complete and verified on `feat/phase-4-public-pages`, based on the Phase 3 PR #2 merge `542bb2f`; awaiting feature-branch PR review. Services, About, Contact, three-step Quote and draft policies use typed content boundaries. Forms validate locally and cannot send or create receipts. Live data, submitted inquiries and staff management remain later dependencies; Phase 5 has not started.
 
 Known issues: npm audit reports 16 moderate development-only findings in the Next/ESLint lint dependency chain, rooted in the minimatch glob-amplification advisory. Production dependency audit reports zero vulnerabilities. ESLint 9.39.5 is deprecated upstream but retained because the selected Next configuration's React/import/accessibility plugins reject ESLint 10; an attempted upgrade was reverted rather than leaving invalid peers. Do not force npm audit's proposed incompatible downgrades or a cross-major minimatch override. Track compatible upstream updates before production readiness. Backend/authentication remain intentionally unimplemented; `/admin` contains only an informational layout shell, no private data or management actions. Original reference defects and unverified business content still need resolution in their corresponding phases.
 
 Dependencies/blockers:
 
 1. No remaining Phase 1 environment blocker. Existing IDE processes can retain the old PATH: run `.\dev.cmd` from the project root to use the provisioned runtime immediately, fully restart VS Code, or use the session PATH initialization command in `README.md`.
-2. Supabase project access is needed before P5 integration; it does not block fixture-based Phase 3.
+2. Supabase project access is needed before P5 integration; it does not block fixture-based P2–P4 interfaces.
 3. Business-approved contacts/content, image rights and conditional journal scope are needed before content publication.
 4. Email provider/domain verification is needed for P8 delivery; hosting/domain/secrets and operational owner are needed for P10.
 
-Exact next task: review and accept [Phase 3 PR #2](https://github.com/db2910/Amajo/pull/2). Do not automatically merge. Only after Phase 3 review and acceptance may Phase 4 supporting pages and validated form UI begin. Keep durable submissions and protected dashboards in their scheduled phases.
+Exact next task: review and accept [Phase 4 PR #3](https://github.com/db2910/Amajo/pull/3), open against main after verified commit/push `409d64d`. Do not automatically merge or start Phase 5 before Phase 4 review and acceptance. Obtain an isolated Supabase development project/configuration for the next phase. Keep durable submissions and protected dashboards in their scheduled phases.
 
-GitHub gate satisfied: Phase 1 was pushed and verified before Phase 2; Phase 2 PR #1 merge was confirmed on 2026-11-04 before Phase 3. Local main fast-forwarded to `9565cf2`, then the dedicated Phase 3 branch was created. Final Phase 3 push/PR verification is recorded in PROJECT_STATUS.md.
+GitHub gates satisfied: Phase 1 was pushed before Phase 2; Phase 2 PR #1 merge was confirmed before Phase 3. Phase 3 PR #2 merge was confirmed on 2026-11-05 at `542bb2f`; local main fast-forwarded before creating the Phase 4 feature branch. Synchronization results are recorded in PROJECT_STATUS.md.
 
 ## 17. Progress report format and history
+
+2026-11-05 — Phase 4 Services spacing review: reduced the Services intro's top padding from 96px to 24px at widths of 1024px and above, bringing the Home / Services breadcrumb closer to the navbar. Direct Edge browser measurements passed at 390/768/1024/1440/1920px with no horizontal overflow; mobile/tablet spacing is unchanged and the desktop screenshot was reviewed. Scoped zero-warning ESLint and production build (including strict TypeScript) passed. This refinement stays on Phase 4 PR #3; Phase 5 remains unstarted.
 
 For each completed phase record: Phase Completed; Implemented; Verification (actual commands/results); Outstanding Issues; Next Step. Update this plan and `PROJECT_STATUS.md` together after meaningful changes. If acceptance is incomplete, report the phase as in progress.
 
@@ -444,4 +448,6 @@ For each completed phase record: Phase Completed; Implemented; Verification (act
 
 2026-11-04 — Phase 3 synchronization: implementation commit `efa7c38` pushed to `origin/feat/phase-3-destinations-tours`, matching local/remote hashes and upstream verified. [PR #2](https://github.com/db2910/Amajo/pull/2) opened against main, not merged. This documentation-only synchronization record follows the implementation commit; final HEAD is rechecked after push. Next: user review/acceptance before Phase 4.
 
-2026-11-05 — Phase 3 review refinements: centered homepage hero text/actions/value strip, enlarged greeting with accessible pause/resume, photographic centered tours hero and confirmed multi-day accommodation across all tour cards/details/inclusions/overnight notes/FAQs. Specific properties and rates remain for the tailored quote. Fixed the navigation library's hidden focus-helper dimensions/pointer hit area while preserving Tab/Shift+Tab. Verification: strict typecheck, final production build, ESLint and changed-file lint, 39 unit tests and all 41 Edge/Chromium browser tests passed (2.5m); screenshots reviewed at 360/1440/1920px. No new packages/assets or original reference changes. Commit/push these revisions to the existing Phase 3 PR #2 and verify synchronization; Phase 4 remains unstarted.
+2026-11-05 — Phase 3 review refinements: centered homepage hero text/actions/value strip, enlarged greeting with accessible pause/resume, photographic centered tours hero and confirmed multi-day accommodation across all tour cards/details/inclusions/overnight notes/FAQs. Specific properties and rates remain for the tailored quote. Fixed the navigation library's hidden focus-helper dimensions/pointer hit area while preserving Tab/Shift+Tab. Verification: strict typecheck, final production build, ESLint and changed-file lint, 39 unit tests and all 41 Edge/Chromium browser tests passed (2.5m); screenshots reviewed at 360/1440/1920px. No new packages/assets or original reference changes. Revisions were pushed to Phase 3 PR #2 and subsequently merged at `542bb2f` before Phase 4 began.
+
+2026-11-05 — **Phase Completed:** Phase 4 — Supporting Public Pages implementation. **Implemented:** ten services/detail template, About, Contact, three-step quote planner with authoritative prefill, shared validation and unavailable Server Action contracts, guarded receipt route and draft policy pages; journal excluded without opt-in. **Verification:** strict typecheck, final build, zero-warning lint, 67 unit tests; all 41 existing browser regressions passed and the final targeted Phase 4 run passed all 15 checks (1.2m), including no-JavaScript guards and touched-date recovery. Desktop/mobile visuals reviewed. **Outstanding Issues:** verified business content/contacts/policies and Phase 5 persistence/auth remain dependencies; no delivery, booking or final legal approval is claimed. Existing development-only lint advisory and wider/manual browser QA remain. **Next Step:** review and accept [PR #3](https://github.com/db2910/Amajo/pull/3). Implementation `409d64d` was pushed with matching local/remote hashes and upstream verified; a documentation-only synchronization commit follows. Do not automatically merge or start Phase 5.
