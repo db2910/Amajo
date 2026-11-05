@@ -12,6 +12,8 @@ Retrieved 2026-11-03. These photographs are served locally from `public/images` 
 
 All linked photo pages and the license were checked during Phase 2. Image display uses responsive cropping without changing the original Stitch files. The supplied AMAJO logo is copied unaltered from the user's reference assets.
 
+2026-11-05: the existing `kenya-elephants.jpg` photograph is also used for the `/tours` hero, with its Tsavo location and photographer shown. The homepage/tours hero refinements introduce no new image assets.
+
 ## Phase 3 editorial additions — 2026-11-04
 
 | File | Photographer | Source and subject |

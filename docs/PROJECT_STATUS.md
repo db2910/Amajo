@@ -1,10 +1,10 @@
 # AMAJO project status
 
-Updated: 2026-11-04 (Africa/Johannesburg).
+Updated: 2026-11-05 (Africa/Johannesburg).
 
 ## Current phase
 
-**Phase 3: complete, verified and pushed on `feat/phase-3-destinations-tours`; [PR #2](https://github.com/db2910/Amajo/pull/2) is open for review, not merged. Phase 4 has not started.** Phases 1–2 are merged; PR #1 was confirmed merged on 2026-11-04 at `9565cf2`, local main fast-forwarded safely, then the Phase 3 branch created. Read `IMPLEMENTATION_PLAN.md` and this file before resuming. Later phase checklists remain unchecked.
+**Phase 3: complete with verified 2026-11-05 hero/accommodation review refinements on `feat/phase-3-destinations-tours`; [PR #2](https://github.com/db2910/Amajo/pull/2) is open for review, not merged. Phase 4 has not started.** Phases 1–2 are merged; PR #1 was confirmed merged on 2026-11-04 at `9565cf2`, local main fast-forwarded safely, then the Phase 3 branch created. Read `IMPLEMENTATION_PLAN.md` and this file before resuming. Later phase checklists remain unchecked.
 
 ## GitHub and version control
 
@@ -12,11 +12,20 @@ Updated: 2026-11-04 (Africa/Johannesburg).
 - Current branch: `feat/phase-3-destinations-tours`, created from synchronized `main`/`origin/main` at `9565cf20a6585093f6432c02255014da318aa0d7`. The initial working tree was clean. Fetch, switch to main and fast-forward-only integration succeeded without conflicts or discarding work.
 - Phase 2 [PR #1](https://github.com/db2910/Amajo/pull/1) was confirmed merged on 2026-11-04 before any Phase 3 implementation. No force-push or history rewrite was used.
 - Phase 1 foundation: `c223deb`; Phase 2 implementation: `7549b3a`, with documentation follow-ups through `f325a70` and merge `9565cf2`.
-- Latest implementation commit: `efa7c3897da9dae06b64a734fd0e01305308819d` — `feat: implement destinations and tour discovery`. Push succeeded with matching local/remote feature branch hashes and upstream `origin/feat/phase-3-destinations-tours` verified. A documentation-only synchronization commit follows; use `git log -1` for the current documentation-inclusive HEAD.
+- Phase 3 baseline implementation commit: `efa7c3897da9dae06b64a734fd0e01305308819d` — `feat: implement destinations and tour discovery`. Push succeeded with matching local/remote feature branch hashes and upstream `origin/feat/phase-3-destinations-tours` verified. A documentation-only synchronization commit follows; use `git log -1` for the current documentation-inclusive HEAD.
+- Latest review work: `feat: center heroes and include multi-day accommodation`, following baseline synchronization commit `20dda34`. Use `git log -1` for its exact HEAD. These verified refinements are committed and pushed to the same feature branch; final local/remote hashes and upstream tracking are rechecked at task completion.
 - Review: [Phase 3 PR #2](https://github.com/db2910/Amajo/pull/2), open against `main`, not merged. The follow-up synchronization record is committed/pushed and its head verified again at task completion.
 - Pre-commit review: 42 intended files; zero credential-pattern matches and zero sensitive paths. Original Stitch references and package manifests/lockfile are unchanged. Dependencies, environment secrets, build output, temporary files and test reports remain ignored; `.env.example` remains tracked with placeholders only.
 - Standing workflow: after each verified phase, review staged content for secrets, update both progress documents, commit, push and verify. Use feature branches/reviewed PRs for substantial changes; never force-push, overwrite remote history or automatically merge the Phase 3 PR.
 
+## Phase 3 review refinements — 2026-11-05
+
+- Centered the homepage hero heading, description, actions and brand-value strip; enlarged the greeting from 30px to 44px mobile/60px desktop, retaining pause/resume and reduced-motion behavior.
+- Added an optional centered composition to the shared catalog hero. `/tours` now uses the existing locally served Tsavo elephant photograph, a contrasting overlay, centered editorial typography, an accommodation highlight and a working link to the search/results area. Country/attraction hero layouts retain their existing composition.
+- Recorded the user's confirmed policy: all tours longer than one day include accommodation. Added a shared duration rule and consistent labels on homepage/catalog cards, trip summaries/sidebar, inclusions, overnight notes and FAQs across all nine concepts. Removed accommodation from exclusions. Property names, room categories and rates remain subject to the tailored quote; no booking is simulated.
+- Fixed a navigation accessibility finding exposed during regression: Radix's hidden keyboard focus proxy now has zero dimensions and no pointer target, while retaining Tab/Shift+Tab focus redirection. The targeted keyboard/menu/drawer axe check passes without disabling a rule or excluding elements.
+- Verification: `npm.cmd run typecheck`, production build (including final strict TypeScript), full ESLint plus final changed-file lint, and 39 unit tests passed. The final full Edge/Chromium suite passed all 41 tests in 2.5m on port 3100. It covers 360/390/768/1024/1440px plus the new 1920px hero checks, greeting controls/reduced motion, both hero images/composition, all nine accommodation pages, keyboard focus and tested axe A/AA scans. Screenshots at 360/1440/1920px were visually inspected. Early test measurement races were fixed with render/font readiness; the exposed navigation focus-proxy finding was corrected and keyboard-tested before the final passing run.
+- Changed modules: homepage/greeting, shared catalog hero/cards, tours page, trip detail, catalog fixture copy, new `src/features/catalog/accommodation.ts`, scoped focus-proxy CSS/header class, unit and browser checks, and both progress records/catalog/photo-credit docs. No packages or image assets added; original Stitch files are unchanged. Phase 4 remains unstarted.
 ## Phase 3 completed work — 2026-11-04
 
 - Added `/destinations`, shared country guides for Rwanda/Uganda/Kenya, 15 correctly associated attraction pages, `/tours`, nine detailed journey concepts and `/experiences`. Only the corresponding Phase 3 previews were replaced; Phase 4 pages remain clearly labelled previews.

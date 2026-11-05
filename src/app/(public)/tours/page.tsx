@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Compass } from "lucide-react";
+import { ArrowLeft, ArrowRight, Compass, BedDouble } from "lucide-react";
 import { Container, Section } from "@/components/layout/primitives";
 import {
   Breadcrumbs,
   DevelopmentNotice,
   TourCollection,
+  CatalogHero,
 } from "@/components/public/catalog-primitives";
 import {
   DesktopFilters,
@@ -37,27 +38,38 @@ export default async function Page({
       <Container>
         <Breadcrumbs items={[{ name: "Journeys" }]} />
       </Container>
-      <Section className="pb-12 pt-7 md:pb-14">
-        <Container>
-          <div className="grid items-end gap-7 lg:grid-cols-[1.2fr_1fr]">
-            <div>
-              <p className="eyebrow text-primary">Journeys worth imagining</p>
-              <h1 className="display-title mt-4">
-                Find your next
-                <br />
-                <span className="italic text-primary">African adventure.</span>
-              </h1>
-            </div>
-            <p className="max-w-lg text-lg text-muted-foreground">
-              A forest encounter. A wide-open horizon. A slower day by the lake.
-              Explore the possibilities and find a starting point that feels
-              like you.
-            </p>
-          </div>
-        </Container>
-      </Section>
+      <CatalogHero
+        centered
+        eyebrow="Rwanda · Uganda · Kenya"
+        title={
+          <>
+            Find your next
+            <br />
+            <span className="italic text-[#efd4a8]">African adventure.</span>
+          </>
+        }
+        description="A forest encounter. A wide-open horizon. A slower day by the lake. Find a journey that feels like you, with time to take it all in."
+        image={{
+          src: "/images/kenya-elephants.jpg",
+          alt: "Elephants gathering at a watering hole in Tsavo, Kenya",
+          caption: "Tsavo, Kenya · Evans Dims",
+        }}
+      >
+        <div className="mt-7 flex flex-col items-center gap-5">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/35 bg-cocoa/30 px-4 py-2 text-sm">
+            <BedDouble aria-hidden="true" className="size-4" />
+            Accommodation included on multi-day tours
+          </p>
+          <Button asChild size="lg">
+            <a href="#journey-results">
+              Find your journey
+              <ArrowRight aria-hidden="true" />
+            </a>
+          </Button>
+        </div>
+      </CatalogHero>
       <DevelopmentNotice />
-      <Section className="pt-10">
+      <Section id="journey-results" className="scroll-mt-28 pt-10">
         <Container>
           {!parsed.success ? (
             <div className="mx-auto max-w-2xl rounded-lg border border-destructive bg-card p-8">

@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Clock3, MapPin, Plus, ArrowUpRight } from "lucide-react";
+import {
+  ArrowRight,
+  Clock3,
+  MapPin,
+  Plus,
+  ArrowUpRight,
+  BedDouble,
+} from "lucide-react";
 import {
   Container,
   Section,
@@ -16,6 +23,7 @@ import type {
 } from "@/features/catalog/types";
 import { attractionHref } from "@/features/catalog/repository";
 import { MediaCredit } from "./media-credit";
+import { includesAccommodation } from "@/features/catalog/accommodation";
 
 export function Breadcrumbs({
   items,
@@ -58,15 +66,19 @@ export function CatalogHero({
   description,
   image,
   children,
+  centered = false,
 }: {
   eyebrow: string;
-  title: string;
+  title: React.ReactNode;
   description: string;
   image: Media;
   children?: React.ReactNode;
+  centered?: boolean;
 }) {
   return (
-    <div className="relative isolate flex min-h-[540px] items-end overflow-hidden bg-cocoa text-background md:min-h-[640px]">
+    <div
+      className={`relative isolate flex overflow-hidden bg-cocoa text-background ${centered ? "min-h-[480px] items-center text-center md:min-h-[540px]" : "min-h-[540px] items-end md:min-h-[640px]"}`}
+    >
       <Image
         src={image.src}
         alt={image.alt}
@@ -76,10 +88,15 @@ export function CatalogHero({
         priority
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-cocoa via-cocoa/60 to-cocoa/10" />
+      {centered && <div className="absolute inset-0 -z-10 bg-cocoa/30" />}
       <Container className="py-12 md:py-20">
         <p className="eyebrow mb-5 text-background">{eyebrow}</p>
-        <h1 className="display-title max-w-3xl">{title}</h1>
-        <p className="mt-6 max-w-xl text-lg text-background/90">
+        <h1 className={`display-title max-w-3xl ${centered ? "mx-auto" : ""}`}>
+          {title}
+        </h1>
+        <p
+          className={`mt-6 max-w-xl text-lg text-background/90 ${centered ? "mx-auto" : ""}`}
+        >
           {description}
         </p>
         {children}
@@ -95,8 +112,9 @@ export function DevelopmentNotice() {
     <div className="border-y bg-sand/60">
       <Container className="py-4 text-sm">
         <strong>Journey inspiration · Development catalog.</strong> Sample
-        itineraries and travel styles are unconfirmed. No prices, permits,
-        accommodation or departures are offered for booking.
+        itineraries are not confirmed departures. Multi-day tours include
+        accommodation; specific properties, prices and availability remain to be
+        confirmed.
       </Container>
     </div>
   );
@@ -144,6 +162,12 @@ export function TourCard({ tour }: { tour: TourSummary }) {
             {tour.durationDays} days
           </span>
         </div>
+        {includesAccommodation(tour.durationDays) && (
+          <p className="mt-4 flex items-center gap-2 text-sm font-medium text-sage">
+            <BedDouble aria-hidden="true" className="size-4 shrink-0" />
+            Accommodation included
+          </p>
+        )}
         <p className="mt-4 flex-1 text-sm text-muted-foreground">
           {tour.overview}
         </p>

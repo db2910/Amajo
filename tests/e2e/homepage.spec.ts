@@ -221,12 +221,36 @@ test("all exposed internal links resolve to a real page, preview or homepage sec
 test("open desktop menus and mobile drawer have no axe A/AA violations", async ({
   page,
 }, testInfo) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/");
   await page
     .getByRole("navigation", { name: "Main navigation" })
     .getByRole("button", { name: "Destinations" })
     .click();
+  await expect(
+    page
+      .getByRole("navigation", { name: "Main navigation" })
+      .getByRole("link", { name: "Explore Rwanda", exact: true }),
+  ).toBeVisible();
+  const trigger = page
+    .getByRole("navigation", { name: "Main navigation" })
+    .getByRole("button", { name: "Destinations" });
+  await trigger.focus();
+  await page.keyboard.press("Tab");
+  await expect(
+    page
+      .getByRole("navigation", { name: "Main navigation" })
+      .getByRole("link", { name: "All destinations", exact: true }),
+  ).toBeFocused();
+  await page.keyboard.press("Shift+Tab");
+  await expect(trigger).toBeFocused();
+  await page.keyboard.press("ArrowDown");
+  await expect(
+    page
+      .getByRole("navigation", { name: "Main navigation" })
+      .getByRole("link", { name: "All destinations", exact: true }),
+  ).toBeFocused();
   expect(
     (
       await new AxeBuilder({ page })

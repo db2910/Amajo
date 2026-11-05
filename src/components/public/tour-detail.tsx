@@ -1,6 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Minus, MapPin, Clock3, Route } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  Minus,
+  MapPin,
+  Clock3,
+  Route,
+  BedDouble,
+} from "lucide-react";
+import { includesAccommodation } from "@/features/catalog/accommodation";
 import {
   Container,
   Section,
@@ -146,6 +155,12 @@ export async function TourDetail({ tour }: { tour: Tour }) {
             <span>
               {experiences.find((e) => e.slug === tour.experience)?.name}
             </span>
+            {includesAccommodation(tour.durationDays) && (
+              <span className="flex items-center gap-2 font-medium text-sage">
+                <BedDouble aria-hidden="true" className="size-4" />
+                Accommodation included
+              </span>
+            )}
           </div>
         </div>
         <MediaGallery images={tour.gallery} title={tour.title} />
@@ -257,13 +272,15 @@ export async function TourDetail({ tour }: { tour: Tour }) {
                   title="What this concept includes."
                 />
                 <p className="mt-4 text-sm text-muted-foreground">
-                  These lists describe this planning concept. They are not
-                  package terms or paid travel inclusions.
+                  Accommodation is included on multi-day tours. Specific
+                  properties and other arrangements will be confirmed in your
+                  final itinerary and quote; this preview does not make a
+                  reservation.
                 </p>
                 <div className="mt-7 grid gap-5 sm:grid-cols-2">
                   {[
                     {
-                      title: "In this planning outline",
+                      title: "Included in your journey",
                       items: tour.inclusions,
                       included: true,
                     },
@@ -351,6 +368,14 @@ export async function TourDetail({ tour }: { tour: Tour }) {
                   </dt>
                   <dd className="mt-1 capitalize">{tour.budgetTier}</dd>
                 </div>
+                {includesAccommodation(tour.durationDays) && (
+                  <div>
+                    <dt className="text-muted-foreground">Accommodation</dt>
+                    <dd className="mt-1 font-medium text-sage">
+                      Included for overnight stays
+                    </dd>
+                  </div>
+                )}
               </dl>
               <Button asChild className="mt-6 w-full">
                 <Link href={quote}>

@@ -54,6 +54,23 @@ describe("development catalog relationships", () => {
       expect(tour.contentSource).toBe("development-fixture");
     }
   });
+  it("includes accommodation consistently across every multi-day itinerary", () => {
+    for (const tour of catalogTours.filter((tour) => tour.durationDays > 1)) {
+      expect(tour.inclusions).toContain(
+        "Accommodation for all overnight stays on this multi-day tour",
+      );
+      expect(tour.accommodation).toContain("Accommodation is included");
+      expect(tour.exclusions.join(" ")).not.toMatch(/accommodation/i);
+      const overnights = tour.itinerary.slice(0, -1);
+      expect(overnights).toHaveLength(tour.durationDays - 1);
+      for (const day of overnights)
+        expect(day.accommodation).toContain("Included overnight accommodation");
+      expect(
+        tour.faqs.find((faq) => faq.question === "Is accommodation included?")
+          ?.answer,
+      ).toContain("Yes.");
+    }
+  });
   it("creates a stable tour prefill URL", () => {
     const url = new URL(tourQuoteHref(catalogTours[0]), "https://example.com");
     expect(url.pathname).toBe("/request-a-quote");

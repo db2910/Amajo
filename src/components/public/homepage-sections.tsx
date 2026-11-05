@@ -13,12 +13,14 @@ import {
   Sparkles,
   Sunrise,
   Users,
+  BedDouble,
 } from "lucide-react";
 import { Container, Section } from "@/components/layout/primitives";
 import { Button } from "@/components/ui/button";
 import { Greeting } from "@/components/public/greeting";
 import { TourSearch } from "@/components/public/tour-search";
 import { buildTourSearchHref, experiences } from "@/features/catalog/search";
+import { includesAccommodation } from "@/features/catalog/accommodation";
 import type {
   DestinationSummary,
   Testimonial,
@@ -41,11 +43,11 @@ export function HomeHero() {
           fetchPriority="high"
           className="-z-20 object-cover object-[60%_55%]"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/55 to-black/25" />
+        <div className="absolute inset-0 -z-10 bg-black/60" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-gradient-to-t from-cocoa/75 to-transparent" />
-        <Container className="pt-40 pb-32 md:pt-48 md:pb-40">
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-6 text-white/90">
+        <Container className="pt-36 pb-28 text-center md:pt-40 md:pb-32">
+          <div className="mx-auto max-w-4xl">
+            <p className="eyebrow mb-4 text-white/90">
               Journeys with a sense of place
             </p>
             <Greeting />
@@ -57,12 +59,12 @@ export function HomeHero() {
               <br />
               <span className="italic text-[#efd4a8]">Essence of Africa</span>
             </h1>
-            <p className="mt-7 max-w-xl text-base leading-7 text-white/90 md:text-lg">
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/90 md:text-lg">
               Explore unforgettable journeys across Rwanda, Uganda, and Kenya.
               Discover extraordinary wildlife, breathtaking landscapes, and
               authentic experiences crafted around you.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button asChild size="lg">
                 <Link href="/tours">
                   Explore Tours <ArrowUpRight aria-hidden="true" />
@@ -80,7 +82,7 @@ export function HomeHero() {
               </Button>
             </div>
           </div>
-          <div className="mt-12 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/25 pt-6 text-xs text-white/90">
+          <div className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-x-8 gap-y-4 border-t border-white/25 pt-6 text-xs text-white/90">
             <span className="inline-flex items-center gap-2">
               <Compass aria-hidden="true" className="size-4 text-[#efd4a8]" />{" "}
               Three extraordinary countries
@@ -221,6 +223,12 @@ export function TourCard({ tour }: { tour: TourSummary }) {
           {tour.overview}
         </p>
         <p className="mt-4 text-xs text-muted-foreground">{category}</p>
+        {includesAccommodation(tour.durationDays) && (
+          <p className="mt-3 flex items-center gap-2 text-sm font-medium text-sage">
+            <BedDouble aria-hidden="true" className="size-4 shrink-0" />
+            Accommodation included
+          </p>
+        )}
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t pt-5">
           <p className="text-sm">
             {tour.startingPrice

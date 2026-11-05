@@ -1,6 +1,6 @@
 # AMAJO implementation plan
 
-Last updated: 2026-11-04 (Africa/Johannesburg).
+Last updated: 2026-11-05 (Africa/Johannesburg).
 
 ## 1. Purpose and working rules
 
@@ -119,6 +119,8 @@ Public navigation: logo/Home, Destinations dropdown (overview, Rwanda, Uganda, K
 | `/admin/profile` | Staff profile, password/MFA settings and logout. |
 
 Bookings, permits, lodge inventory, flight charters and field tracking shown in Stitch are excluded modules. Tour accommodation text and approved lodge imagery remain part of tour content.
+
+Business policy confirmed by the user on 2026-11-05: all tours longer than one day include accommodation for the scheduled overnight stays. Show this consistently on cards, trip summaries, inclusions, FAQs and itinerary notes. Specific properties, room categories, rates and availability require confirmation in the tailored quote; the policy does not imply a booked property or online booking functionality.
 
 ## 6. Design and responsive strategy
 
@@ -409,7 +411,7 @@ Deliverable: deployed, monitored site and handed-over CMS. Acceptance: productio
 
 ## 16. Current progress, known issues and next work
 
-Current phase: Phase 3 destinations and tour discovery complete, verified and pushed as `efa7c38` on `feat/phase-3-destinations-tours`; [PR #2](https://github.com/db2910/Amajo/pull/2) is open for review and has not been merged. Phase 2 PR #1 is merged at `9565cf2`; local main was safely synchronized first. Completed functionality includes country/attraction discovery, typed catalog relationships, working URL search/filter/sort/pagination, individual itineraries/galleries/FAQs/related tours, validated quote-context links and experiences. Phase 4 has not started. Live data, submitted inquiries and staff management remain later dependencies.
+Current phase: Phase 3 destinations and tour discovery complete, including verified 2026-11-05 centered heroes, enlarged greeting, photographic tours hero and included multi-day accommodation, on `feat/phase-3-destinations-tours`; [PR #2](https://github.com/db2910/Amajo/pull/2) is open for review and has not been merged. Phase 2 PR #1 is merged at `9565cf2`; local main was safely synchronized first. Completed functionality includes country/attraction discovery, typed catalog relationships, working URL search/filter/sort/pagination, individual itineraries/galleries/FAQs/related tours, validated quote-context links and experiences. Phase 4 has not started. Live data, submitted inquiries and staff management remain later dependencies.
 
 Known issues: npm audit reports 16 moderate development-only findings in the Next/ESLint lint dependency chain, rooted in the minimatch glob-amplification advisory. Production dependency audit reports zero vulnerabilities. ESLint 9.39.5 is deprecated upstream but retained because the selected Next configuration's React/import/accessibility plugins reject ESLint 10; an attempted upgrade was reverted rather than leaving invalid peers. Do not force npm audit's proposed incompatible downgrades or a cross-major minimatch override. Track compatible upstream updates before production readiness. Backend/authentication remain intentionally unimplemented; `/admin` contains only an informational layout shell, no private data or management actions. Original reference defects and unverified business content still need resolution in their corresponding phases.
 
@@ -441,3 +443,5 @@ For each completed phase record: Phase Completed; Implemented; Verification (act
 2026-11-04 — **Phase Completed:** Phase 3 — Destinations and Tours implementation. **Implemented:** three country guides, 15 attractions, nine journey concepts, complete discovery/filter/pagination interactions, galleries/ordered itineraries/FAQs/related concepts, quote-context links and six experiences behind typed read boundaries. **Verification:** typecheck, final build, zero-warning lint, 38 unit tests, full 33-test browser run plus 12 final catalog tests passed. Original references and dependencies unchanged; ten credited local photos added. **Outstanding Issues:** development content/approved business arrangements and later backend remain explicit; existing lint advisory and broader browser/manual QA remain. **Next Step:** feature-branch push and PR review; Phase 4 requires acceptance first.
 
 2026-11-04 — Phase 3 synchronization: implementation commit `efa7c38` pushed to `origin/feat/phase-3-destinations-tours`, matching local/remote hashes and upstream verified. [PR #2](https://github.com/db2910/Amajo/pull/2) opened against main, not merged. This documentation-only synchronization record follows the implementation commit; final HEAD is rechecked after push. Next: user review/acceptance before Phase 4.
+
+2026-11-05 — Phase 3 review refinements: centered homepage hero text/actions/value strip, enlarged greeting with accessible pause/resume, photographic centered tours hero and confirmed multi-day accommodation across all tour cards/details/inclusions/overnight notes/FAQs. Specific properties and rates remain for the tailored quote. Fixed the navigation library's hidden focus-helper dimensions/pointer hit area while preserving Tab/Shift+Tab. Verification: strict typecheck, final production build, ESLint and changed-file lint, 39 unit tests and all 41 Edge/Chromium browser tests passed (2.5m); screenshots reviewed at 360/1440/1920px. No new packages/assets or original reference changes. Commit/push these revisions to the existing Phase 3 PR #2 and verify synchronization; Phase 4 remains unstarted.

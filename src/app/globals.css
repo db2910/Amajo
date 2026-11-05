@@ -110,6 +110,13 @@
 }
 
 @layer components {
+  /* Radix's hidden focus proxy redirects keyboard entry into the submenu.
+     Keep it at zero size and pointer-inert; its tab/focus behavior is retained. */
+  .amajo-navigation span[aria-hidden="true"][tabindex="0"] {
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none;
+  }
   .skip-link {
     @apply fixed top-3 left-3 z-[100] -translate-y-24 rounded-md bg-cocoa px-5 py-3 text-background focus:translate-y-0;
   }

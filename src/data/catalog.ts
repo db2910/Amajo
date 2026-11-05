@@ -1,5 +1,6 @@
 import { destinations, featuredTours } from "./homepage";
 import { experiences } from "@/features/catalog/search";
+import { includesAccommodation } from "@/features/catalog/accommodation";
 import type {
   Attraction,
   CountrySlug,
@@ -229,7 +230,7 @@ export const catalogDestinations: Destination[] = destinations.map(
       {
         question: "Are the journeys on this website available to book?",
         answer:
-          "These are clearly labelled development concepts. AMAJO has not confirmed operation, prices, permits or accommodation for these itineraries. No booking or quote request is submitted here.",
+          "These are clearly labelled development concepts, not confirmed departures. Multi-day tours include accommodation; specific properties, prices, permits and availability remain to be confirmed. No booking or quote request is submitted here.",
       },
       {
         question: "Can I combine countries?",
@@ -667,7 +668,7 @@ export const catalogTours: Tour[] = tourSeeds.map(
       attractionKeys: stops,
       budgetTier: tier,
       createdAt: `2026-10-${String(index + 1).padStart(2, "0")}T00:00:00Z`,
-      story: `${s.overview} This development itinerary explores how these places might fit together, with room for local discovery and a considered pace. Every day below is a planning idea. Transport, accommodation, permits and operation would need confirmation before an actual journey could be offered.`,
+      story: `${s.overview} Explore how these places might fit together, with room for local discovery and a considered pace. ${includesAccommodation(s.durationDays) ? "Accommodation is included for the overnight stays on this multi-day tour." : "This day tour does not require an overnight stay."} Specific properties, transport, permits and departure availability are confirmed during planning; this sample itinerary does not make a reservation.`,
       highlights: places.map((p) => `${p.name} · ${p.special[0]}`),
       gallery,
       itinerary: Array.from({ length: s.durationDays }, (_, dayIndex) => {
@@ -711,22 +712,24 @@ export const catalogTours: Tour[] = tourSeeds.map(
           attractionKey: attractionKey(place),
           image: place.gallery[0],
           accommodation: last
-            ? "Departure arrangements to be confirmed; no overnight included."
-            : `Accommodation in the ${place.name} region to be selected; no property is reserved.`,
+            ? "Departure day; your included overnight stays are scheduled on the preceding days."
+            : `Included overnight accommodation in the ${place.name} region. The specific property and room type will be confirmed in your tailored quote.`,
           meals: undefined,
         };
       }),
       inclusions: [
         "Proposed daily planning outline",
         "Suggested destinations and activity themes",
-        "Accommodation style discussion",
+        ...(includesAccommodation(s.durationDays)
+          ? ["Accommodation for all overnight stays on this multi-day tour"]
+          : []),
       ],
       exclusions: [
-        "Flights, transfers and accommodation are not reserved",
+        "Flights and transfers are not reserved",
         "Park fees, permits and activities are not included",
         "Meals, insurance and personal expenses are not included",
       ],
-      accommodation: `${tier === "luxury" ? "A preference for spacious, thoughtfully chosen stays" : tier === "budget" ? "A preference for simple, locally focused stays" : "A preference for comfortable, characterful stays"}. This is a development style preference, not a quoted rate. No lodge, hotel, room category or availability has been confirmed.`,
+      accommodation: `${includesAccommodation(s.durationDays) ? "Accommodation is included for every overnight stay on this multi-day tour." : "This day tour does not include an overnight stay."} ${tier === "luxury" ? "Spacious, thoughtfully chosen stays" : tier === "budget" ? "Simple, locally focused stays" : "Comfortable, characterful stays"} guide the accommodation style. Specific lodges or hotels, room categories and rates will be confirmed in your tailored quote; no property has been reserved by this preview.`,
       difficulty: themes.includes("gorilla-trekking")
         ? "Variable · forest trekking can be demanding"
         : themes.includes("adventure-hiking")
@@ -749,6 +752,12 @@ export const catalogTours: Tour[] = tourSeeds.map(
         "Cross-country connections and border requirements require confirmation where applicable.",
       ],
       faqs: [
+        {
+          question: "Is accommodation included?",
+          answer: includesAccommodation(s.durationDays)
+            ? "Yes. All tours lasting more than one day include accommodation for the scheduled overnight stays. The specific properties and room types will be confirmed in your tailored quote."
+            : "This is a day tour with no overnight stay scheduled.",
+        },
         {
           question: "Is this a confirmed AMAJO departure?",
           answer:

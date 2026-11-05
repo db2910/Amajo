@@ -4,6 +4,8 @@ The server-only `CatalogRepository` in `src/features/catalog/repository.ts` supp
 
 `src/data/catalog.ts` provides three destinations, 15 attractions, six experiences and nine clearly labelled development journey concepts. It extends the existing homepage summaries so original country/tour links stay stable. Tours support many countries, attractions and experiences, integer-day duration, optional USD minor-unit pricing, ordered itinerary days/activities, media, lodging/meal notes, FAQs and recommendation relationships. Fixtures intentionally omit all prices, booked lodges and meals. Travel style indicates a concept preference rather than a real price band. Sample daily outlines, inclusions and exclusions describe planning ideas rather than contracted package terms.
 
+Business policy confirmed by the user on 2026-11-05: every tour longer than one day includes accommodation for its overnight stays. `includesAccommodation` supplies the shared duration rule for homepage/catalog cards and detail summaries; all nine concepts also include accommodation in their inclusions, descriptions, FAQs and overnight notes. Specific properties, room types, rates and availability remain to be confirmed in the tailored quote; this policy does not imply a booked property or working online booking. A one-day tour does not automatically receive an overnight-inclusion label.
+
 ## Routes
 
 - `/destinations`; `/destinations/{rwanda,uganda,kenya}`.
