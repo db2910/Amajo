@@ -1,6 +1,6 @@
 # AMAJO implementation plan
 
-Last updated: 2026-11-03 (Africa/Johannesburg).
+Last updated: 2026-11-05 (Africa/Johannesburg).
 
 ## 1. Purpose and working rules
 
@@ -8,7 +8,7 @@ Build a secure, responsive East African tours website and administrative CMS for
 
 This document is the implementation roadmap. Read it with `PROJECT_STATUS.md` before every resumed session. Preserve the original Stitch exports. Review the relevant screenshot and HTML before each visual implementation. Execute phases in order, verify behavior, then update both documents. A rendered screen is not a completed feature. Check a task only when its acceptance criteria are met; describe partial work separately.
 
-Checklist convention: `- [ ]` means not started or incomplete; `- [x]` means verified completed. Phases 1–2 are complete, verified and pushed. Phase 1 is on `main`; Phase 2 is on `feat/phase-2-homepage` with PR #1 open for review. Phase 3 has not started.
+Checklist convention: `- [ ]` means not started or incomplete; `- [x]` means verified completed. Phases 1–2 are complete and merged into `main`. PR #1 merge was verified on 2026-11-04 at `9565cf2`; local main fast-forwarded and `feat/phase-3-destinations-tours` created. Phase 3 implementation and acceptance checks are complete and pushed; [PR #2](https://github.com/db2910/Amajo/pull/2) awaits user review, not merged. Phase 4 has not started.
 
 Launch scope: three countries, tours and experiences, attractions, services, company information, quote/contact intake, and a complete CMS and inquiry workflow. No customer accounts, checkout, payments, live booking inventory, permit procurement, aviation integrations, satellite tracking, currency conversion, or newsletter delivery in the baseline. These appear in reference artwork but are separate products. Journal/blog routes are conditional on business scope confirmation; their schema and implementation slot are reserved below. Greeting animation does not imply a translated website.
 
@@ -119,6 +119,8 @@ Public navigation: logo/Home, Destinations dropdown (overview, Rwanda, Uganda, K
 | `/admin/profile` | Staff profile, password/MFA settings and logout. |
 
 Bookings, permits, lodge inventory, flight charters and field tracking shown in Stitch are excluded modules. Tour accommodation text and approved lodge imagery remain part of tour content.
+
+Business policy confirmed by the user on 2026-11-05: all tours longer than one day include accommodation for the scheduled overnight stays. Show this consistently on cards, trip summaries, inclusions, FAQs and itinerary notes. Specific properties, room categories, rates and availability require confirmation in the tailored quote; the policy does not imply a booked property or online booking functionality.
 
 ## 6. Design and responsive strategy
 
@@ -282,14 +284,16 @@ Verified 2026-11-03: 19 unit tests, zero-warning ESLint, strict route/type check
 
 Dependencies: P2; country/tour/experience/attraction contracts.
 
-- [ ] Destinations overview and Rwanda/Uganda/Kenya template pages.
-- [ ] Attraction listing sections and detail pages.
-- [ ] Tours listing, query parsing, filters, sorting, pagination and empty states.
-- [ ] Tour details, ordered itinerary, gallery, inclusions/exclusions, FAQs and related tours.
-- [ ] Experiences overview and consistent filtered-tour links.
-- [ ] Test query behavior, relation rendering, unknown slugs, gallery/disclosures and responsive layouts; run checks.
+- [x] Destinations overview and Rwanda/Uganda/Kenya template pages.
+- [x] Attraction listing sections and detail pages.
+- [x] Tours listing, query parsing, filters, sorting, pagination and empty states.
+- [x] Tour details, ordered itinerary, gallery, inclusions/exclusions, FAQs and related tours.
+- [x] Experiences overview and consistent filtered-tour links.
+- [x] Test query behavior, relation rendering, unknown slugs, gallery/disclosures and responsive layouts; run checks.
 
 Files/modules: public catalog routes, catalog repositories, search schema, gallery/timeline components. Deliverable: complete discovery journey with typed fixture adapter pending P5. Acceptance: shareable filters produce correct results; relations/itineraries work; unavailable records fail safely; quote prefill carries valid context. Next: supporting pages.
+
+Verified 2026-11-04: strict typecheck, zero-warning ESLint, final production build, 38 unit tests, a full 33-test Edge browser run (4.4m), and 12 final catalog tests (1.5m) after the Jinja media/credit refinement passed. Coverage includes eight representative catalog routes at 360/390/768/1024/1440px, all 15 attractions and nine tour detail responses, invalid/mismatched 404s, combined filters, refresh/history/sort/reset, pagination/empty states, keyboard itinerary/gallery/drawer controls, related tours, validated quote context, public image credits and axe A/AA scans. Ten local editorial photos added; original exports and dependencies unchanged. The only initial browser failure was a whitespace-sensitive link locator, corrected and rerun. See `PHASE_3_CATALOG.md` for repository relationships and the additive categorical `budget` query key; numeric `maxBudget` keeps its original meaning. No prices, operated departures, lodges or successful submissions are fabricated. Phase 4 requires review and acceptance of Phase 3 first.
 
 ### Phase 4 — Supporting Public Pages
 
@@ -407,20 +411,20 @@ Deliverable: deployed, monitored site and handed-over CMS. Acceptance: productio
 
 ## 16. Current progress, known issues and next work
 
-Current phase: Phase 2 navigation/homepage complete, verified and pushed as `7549b3a` on `feat/phase-2-homepage`; [PR #1](https://github.com/db2910/Amajo/pull/1) is open for review and has not been merged. Phase 1 is already synchronized to GitHub `main`. Completed functionality includes the foundation plus responsive public navigation, multilingual hero, typed URL search, destination/sample tour cards, experience/story/value sections, testimonial empty state, final CTA and cocoa footer. Phase 3 and all later implementation phases remain pending. No live database, quote submission or staff dashboard behavior is claimed.
+Current phase: Phase 3 destinations and tour discovery complete, including verified 2026-11-05 centered heroes, enlarged greeting, photographic tours hero and included multi-day accommodation, on `feat/phase-3-destinations-tours`; [PR #2](https://github.com/db2910/Amajo/pull/2) is open for review and has not been merged. Phase 2 PR #1 is merged at `9565cf2`; local main was safely synchronized first. Completed functionality includes country/attraction discovery, typed catalog relationships, working URL search/filter/sort/pagination, individual itineraries/galleries/FAQs/related tours, validated quote-context links and experiences. Phase 4 has not started. Live data, submitted inquiries and staff management remain later dependencies.
 
 Known issues: npm audit reports 16 moderate development-only findings in the Next/ESLint lint dependency chain, rooted in the minimatch glob-amplification advisory. Production dependency audit reports zero vulnerabilities. ESLint 9.39.5 is deprecated upstream but retained because the selected Next configuration's React/import/accessibility plugins reject ESLint 10; an attempted upgrade was reverted rather than leaving invalid peers. Do not force npm audit's proposed incompatible downgrades or a cross-major minimatch override. Track compatible upstream updates before production readiness. Backend/authentication remain intentionally unimplemented; `/admin` contains only an informational layout shell, no private data or management actions. Original reference defects and unverified business content still need resolution in their corresponding phases.
 
 Dependencies/blockers:
 
 1. No remaining Phase 1 environment blocker. Existing IDE processes can retain the old PATH: run `.\dev.cmd` from the project root to use the provisioned runtime immediately, fully restart VS Code, or use the session PATH initialization command in `README.md`.
-2. Supabase project access is needed before P5 integration; it does not block Phase 2.
+2. Supabase project access is needed before P5 integration; it does not block fixture-based Phase 3.
 3. Business-approved contacts/content, image rights and conditional journal scope are needed before content publication.
 4. Email provider/domain verification is needed for P8 delivery; hosting/domain/secrets and operational owner are needed for P10.
 
-Exact next task: review/merge Phase 2 PR #1. After review and a subsequent Phase 3 authorization, implement destinations overview/country/attraction pages, then tour listing/filtering/detail pages and itineraries. Replace only the corresponding preview route contracts as real pages become available. Keep real submission behavior and protected dashboard work in their scheduled phases. Never put credentials in these documents.
+Exact next task: review and accept [Phase 3 PR #2](https://github.com/db2910/Amajo/pull/2). Do not automatically merge. Only after Phase 3 review and acceptance may Phase 4 supporting pages and validated form UI begin. Keep durable submissions and protected dashboards in their scheduled phases.
 
-GitHub gate satisfied: `origin` is `https://github.com/db2910/Amajo.git`; device authentication succeeded and Phase 1 commit `c223deb` was pushed to `origin/main`, with matching local/remote hashes and upstream tracking verified. Phase 2 is now authorized to begin on a feature branch.
+GitHub gate satisfied: Phase 1 was pushed and verified before Phase 2; Phase 2 PR #1 merge was confirmed on 2026-11-04 before Phase 3. Local main fast-forwarded to `9565cf2`, then the dedicated Phase 3 branch was created. Final Phase 3 push/PR verification is recorded in PROJECT_STATUS.md.
 
 ## 17. Progress report format and history
 
@@ -435,3 +439,9 @@ For each completed phase record: Phase Completed; Implemented; Verification (act
 2026-11-03 — **Phase Completed:** Phase 2 — Navigation and Homepage. **Implemented:** responsive desktop menus/mobile drawer, sticky overlay header, accessible cycling greeting with pause/reduced motion, photo hero, typed search URL contract, editorial destinations/sample tours, six experiences, company philosophy/values, verified-only testimonial renderer, closing CTA and cocoa footer. **Verification:** 19 unit tests, strict type checks, ESLint/build and 22 browser tests passed; fixed optimized-logo rounding, primary hover contrast and overly broad test selectors. Visual evidence includes desktop/mobile homepage and navigation captures. **Outstanding Issues:** detailed content pages remain explicitly labelled previews until Phases 3–4; no fake offers, contact details, reviews or live submission behavior. Existing lint dependency advisory remains. **Next Step:** push and review this feature branch, then Phase 3 in a subsequent task.
 
 2026-11-03 — Phase 2 synchronization: `7549b3a` pushed with local/remote feature hashes and upstream tracking verified. PR #1 opened against main for review, without merging or rewriting history. Final production dependency audit is clear; final copy/visual refinement passed build/lint and three targeted screenshot/navigation checks. Review/merge is the next task; Phase 3 remains unstarted.
+
+2026-11-04 — **Phase Completed:** Phase 3 — Destinations and Tours implementation. **Implemented:** three country guides, 15 attractions, nine journey concepts, complete discovery/filter/pagination interactions, galleries/ordered itineraries/FAQs/related concepts, quote-context links and six experiences behind typed read boundaries. **Verification:** typecheck, final build, zero-warning lint, 38 unit tests, full 33-test browser run plus 12 final catalog tests passed. Original references and dependencies unchanged; ten credited local photos added. **Outstanding Issues:** development content/approved business arrangements and later backend remain explicit; existing lint advisory and broader browser/manual QA remain. **Next Step:** feature-branch push and PR review; Phase 4 requires acceptance first.
+
+2026-11-04 — Phase 3 synchronization: implementation commit `efa7c38` pushed to `origin/feat/phase-3-destinations-tours`, matching local/remote hashes and upstream verified. [PR #2](https://github.com/db2910/Amajo/pull/2) opened against main, not merged. This documentation-only synchronization record follows the implementation commit; final HEAD is rechecked after push. Next: user review/acceptance before Phase 4.
+
+2026-11-05 — Phase 3 review refinements: centered homepage hero text/actions/value strip, enlarged greeting with accessible pause/resume, photographic centered tours hero and confirmed multi-day accommodation across all tour cards/details/inclusions/overnight notes/FAQs. Specific properties and rates remain for the tailored quote. Fixed the navigation library's hidden focus-helper dimensions/pointer hit area while preserving Tab/Shift+Tab. Verification: strict typecheck, final production build, ESLint and changed-file lint, 39 unit tests and all 41 Edge/Chromium browser tests passed (2.5m); screenshots reviewed at 360/1440/1920px. No new packages/assets or original reference changes. Commit/push these revisions to the existing Phase 3 PR #2 and verify synchronization; Phase 4 remains unstarted.

@@ -66,7 +66,7 @@ export function PublicHeader() {
           onValueChange={setActiveMenu}
           delayDuration={150}
           skipDelayDuration={300}
-          className="relative hidden xl:block"
+          className="amajo-navigation relative hidden xl:block"
         >
           <NavigationMenu.List className="flex items-center gap-0.5">
             <NavigationMenu.Item>

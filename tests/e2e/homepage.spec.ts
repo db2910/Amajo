@@ -51,7 +51,9 @@ test("mobile drawer expands country and experience groups and closes on navigati
     .click();
   await expect(page).toHaveURL("/destinations/rwanda");
   await expect(page.getByRole("dialog")).toHaveCount(0);
-  await expect(page.locator("main")).toContainText("Website preview");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "A thousand hills",
+  );
 });
 
 test("sticky navigation gains a solid background on scroll", async ({
@@ -69,7 +71,7 @@ test("sticky navigation gains a solid background on scroll", async ({
   ).toBe(0);
 });
 
-test("search generates the agreed parameters and the preview explains its state", async ({
+test("search generates the agreed parameters and the catalog handles unpriced concepts", async ({
   page,
 }) => {
   await page.goto("/");
@@ -96,12 +98,14 @@ test("search generates the agreed parameters and the preview explains its state"
     maxDays: "9",
     maxBudget: "5000",
   });
-  await expect(page.locator("main")).toContainText("Your search preferences");
+  await expect(page.locator("main")).toContainText("0 journey concepts");
   await expect(page.locator("main")).toContainText(
-    "No inquiry has been submitted",
+    "Unpriced journeys cannot match a maximum price",
   );
   await page.reload();
-  await expect(page.locator("main")).toContainText("Gorilla Trekking");
+  await expect(
+    page.getByRole("combobox", { name: "Experience", exact: true }).first(),
+  ).toHaveValue("gorilla-trekking");
 });
 
 test("invalid query parameters are rejected and unknown destination paths return 404", async ({
@@ -217,12 +221,36 @@ test("all exposed internal links resolve to a real page, preview or homepage sec
 test("open desktop menus and mobile drawer have no axe A/AA violations", async ({
   page,
 }, testInfo) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/");
   await page
     .getByRole("navigation", { name: "Main navigation" })
     .getByRole("button", { name: "Destinations" })
     .click();
+  await expect(
+    page
+      .getByRole("navigation", { name: "Main navigation" })
+      .getByRole("link", { name: "Explore Rwanda", exact: true }),
+  ).toBeVisible();
+  const trigger = page
+    .getByRole("navigation", { name: "Main navigation" })
+    .getByRole("button", { name: "Destinations" });
+  await trigger.focus();
+  await page.keyboard.press("Tab");
+  await expect(
+    page
+      .getByRole("navigation", { name: "Main navigation" })
+      .getByRole("link", { name: "All destinations", exact: true }),
+  ).toBeFocused();
+  await page.keyboard.press("Shift+Tab");
+  await expect(trigger).toBeFocused();
+  await page.keyboard.press("ArrowDown");
+  await expect(
+    page
+      .getByRole("navigation", { name: "Main navigation" })
+      .getByRole("link", { name: "All destinations", exact: true }),
+  ).toBeFocused();
   expect(
     (
       await new AxeBuilder({ page })

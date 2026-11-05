@@ -1,5 +1,13 @@
 # Phase 2 route contracts
 
+## Phase 3 replacement — 2026-11-04
+
+Explicit App Router pages now replace every Phase 3 preview: `/destinations`, the three countries and their 15 attractions, `/tours`, all nine development journey detail pages, and `/experiences`. Unknown records and country/attraction mismatches return 404. Only services, About, Contact, quote, privacy and terms remain in the preview allowlist. No business form delivery is implemented.
+
+The original contract is retained below as history. Current behavior and the backward-compatible query additions are documented in [Phase 3 catalog](PHASE_3_CATALOG.md). Homepage links and the three original journey slugs remain valid.
+
+## Original Phase 2 boundary
+
 The homepage and navigation are implemented in Phase 2. Destination guides, attraction details, tour listing/detail pages and supporting public pages remain in Phases 3–4. The explicit route allowlist in `src/features/navigation/route-contracts.ts` provides labelled preview screens for links exposed in this phase; unknown paths still return 404. Replace the relevant preview with its full route when that phase is implemented; do not mark preview screens as completed content pages.
 
 - Countries: `/destinations/rwanda`, `/destinations/uganda`, `/destinations/kenya` and overview `/destinations`.

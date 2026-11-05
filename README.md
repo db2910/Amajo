@@ -1,6 +1,6 @@
 # AMAJO — Essence of Africa
 
-Next.js 16 App Router application for the AMAJO public travel website and future administration system. Phases 1–2 provide the foundation and responsive homepage. Start with [the project status](docs/PROJECT_STATUS.md) and [implementation roadmap](docs/IMPLEMENTATION_PLAN.md).
+Next.js 16 App Router application for the AMAJO public travel website and future administration system. Phases 1–3 provide the foundation, responsive homepage and development destination/tour catalog. Start with [the project status](docs/PROJECT_STATUS.md) and [implementation roadmap](docs/IMPLEMENTATION_PLAN.md).
 
 ## Run locally
 
@@ -12,7 +12,7 @@ On this Windows workspace, start the app from PowerShell with:
 .\dev.cmd
 ```
 
-The launcher finds the provisioned Node installation even when VS Code's terminal has an old PATH. Open **http://localhost:3000/foundation** once the server says it is ready. Keep that terminal running; use Ctrl+C to stop it. Optional Next.js arguments are forwarded, for example `.\dev.cmd --port 3001`.
+The launcher finds the provisioned Node installation even when VS Code's terminal has an old PATH. Open **http://localhost:3000/** once the server says it is ready. Keep that terminal running; use Ctrl+C to stop it. Optional Next.js arguments are forwarded, for example `.\dev.cmd --port 3001`.
 
 For a fresh installation, or once Node/npm are available on the terminal PATH, use:
 
@@ -23,7 +23,7 @@ npm.cmd run dev
 
 Open `http://localhost:3000` for the homepage. `/foundation` is the interactive design reference; `/admin` is an informational layout shell without authentication, private data or management actions. Phase 5 implements auth; Phase 6 implements the protected dashboard. The development website remains noindex.
 
-The homepage includes responsive navigation, accessible menus/drawer, the multilingual greeting with pause/reduced-motion controls, URL-based tour search, destination/sample journey cards, experience/story/value sections, an honest testimonial empty state and the deep cocoa footer. Tours are explicitly labelled development concepts, with no invented prices or availability. Later-phase destinations, tour details, contact, policy and quote pages resolve to labelled previews. Search preferences are displayed from the URL; no inquiry is collected. See [route contracts](docs/PHASE_2_ROUTE_CONTRACTS.md) and [image credits](docs/IMAGE_CREDITS.md).
+The homepage includes responsive navigation, accessible menus/drawer, the multilingual greeting with pause/reduced-motion controls, URL-based tour search, editorial sections and the deep cocoa footer. `/destinations` has three country guides and 15 attraction pages; `/tours` searches nine development concepts with combinable filters, sorting and pagination. Individual trip pages provide galleries, ordered itineraries, planning notes and related concepts. `/experiences` links six interests into filtered results. Tours are clearly labelled development concepts with no invented prices or availability. Contact, policies, services and quote forms remain labelled Phase 4 previews; quote links carry validated context without submitting anything. See [catalog contracts](docs/PHASE_3_CATALOG.md), [remaining previews](docs/PHASE_2_ROUTE_CONTRACTS.md) and [image credits](docs/IMAGE_CREDITS.md).
 
 No environment file is required for Phase 1. Copy `.env.example` to `.env.local` when configuration is needed. Leave Supabase values blank until real integration begins; a URL and publishable key must be supplied together. Never use a privileged key in any `NEXT_PUBLIC_` variable. Environment errors report variable names, not values.
 

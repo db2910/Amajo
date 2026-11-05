@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
+import { Pause, Play } from "lucide-react";
 
 const greetings = ["Hello", "Muraho", "Habari", "Bonjour"];
 
@@ -19,11 +20,14 @@ export function Greeting() {
   }, [reducedMotion, paused]);
 
   return (
-    <div className="flex items-center gap-4 text-white">
+    <div className="relative mx-auto w-fit px-14 text-center text-white">
       <p className="sr-only">
         Hello, Muraho, Habari, Bonjour. Welcome to AMAJO.
       </p>
-      <div aria-hidden="true" className="w-36 font-display text-3xl">
+      <div
+        aria-hidden="true"
+        className="w-[7ch] font-display text-[2.75rem] leading-[1.15] md:text-6xl"
+      >
         <AnimatePresence mode="wait" initial={false}>
           <motion.span
             data-testid="greeting"
@@ -44,9 +48,16 @@ export function Greeting() {
           type="button"
           onClick={() => setPaused((value) => !value)}
           aria-pressed={paused}
-          className="min-h-11 rounded-md px-2 text-xs text-white/90 underline underline-offset-4 focus-visible:outline-white"
+          className="absolute top-1/2 right-0 flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/15 text-white transition-colors hover:bg-white/20 focus-visible:outline-white"
         >
-          {paused ? "Resume greeting" : "Pause greeting"}
+          {paused ? (
+            <Play aria-hidden="true" className="size-4" />
+          ) : (
+            <Pause aria-hidden="true" className="size-4" />
+          )}
+          <span className="sr-only">
+            {paused ? "Resume greeting" : "Pause greeting"}
+          </span>
         </button>
       )}
     </div>
