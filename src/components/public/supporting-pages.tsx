@@ -152,7 +152,7 @@ export async function ServicesPage() {
   const services = await publicContent.services();
   return (
     <>
-      <Section className="bg-sand/30">
+      <Section className="bg-sand/30 lg:pt-6">
         <Container>
           <Breadcrumbs items={[{ name: "Services" }]} />
           <div className="grid items-center gap-10 pt-5 lg:grid-cols-[1.1fr_1fr]">

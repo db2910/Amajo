@@ -430,6 +430,8 @@ GitHub gates satisfied: Phase 1 was pushed before Phase 2; Phase 2 PR #1 merge w
 
 ## 17. Progress report format and history
 
+2026-11-05 — Phase 4 Services spacing review: reduced the Services intro's top padding from 96px to 24px at widths of 1024px and above, bringing the Home / Services breadcrumb closer to the navbar. Direct Edge browser measurements passed at 390/768/1024/1440/1920px with no horizontal overflow; mobile/tablet spacing is unchanged and the desktop screenshot was reviewed. Scoped zero-warning ESLint and production build (including strict TypeScript) passed. This refinement stays on Phase 4 PR #3; Phase 5 remains unstarted.
+
 For each completed phase record: Phase Completed; Implemented; Verification (actual commands/results); Outstanding Issues; Next Step. Update this plan and `PROJECT_STATUS.md` together after meaningful changes. If acceptance is incomplete, report the phase as in progress.
 
 2026-11-03 — Discovery/planning milestone completed. Inspected source inventory, all HTML export structures, ten screenshots, design system and logo. Created this plan and initial status. PowerShell file/tool availability checks ran; no application checks were possible because no application/toolchain exists in the assessed setup. Next task: P1 toolchain and scaffold.
