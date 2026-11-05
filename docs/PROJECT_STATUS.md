@@ -4,7 +4,7 @@ Updated: 2026-11-05 (Africa/Johannesburg).
 
 ## Current phase
 
-**Phase 4: supporting public pages and inquiry interfaces complete and verified on `feat/phase-4-public-pages`; awaiting feature-branch PR review. Phase 5 has not started.** Phases 1–3 are merged. Phase 3 [PR #2](https://github.com/db2910/Amajo/pull/2) was confirmed merged on 2026-11-05 at `542bb2f`, local main fast-forwarded safely, then the Phase 4 branch created. Read `IMPLEMENTATION_PLAN.md` and this file before resuming. Later phase checklists remain unchecked.
+**Phase 4: supporting public pages and inquiry interfaces complete and verified on `feat/phase-4-public-pages`; [PR #3](https://github.com/db2910/Amajo/pull/3) is open for review, not merged. Phase 5 has not started.** Phases 1–3 are merged. Phase 3 [PR #2](https://github.com/db2910/Amajo/pull/2) was confirmed merged on 2026-11-05 at `542bb2f`, local main fast-forwarded safely, then the Phase 4 branch created. Read `IMPLEMENTATION_PLAN.md` and this file before resuming. Later phase checklists remain unchecked.
 
 ## GitHub and version control
 
@@ -14,7 +14,10 @@ Updated: 2026-11-05 (Africa/Johannesburg).
 - Phase 1 foundation: `c223deb`; Phase 2 implementation: `7549b3a`, with documentation follow-ups through `f325a70` and merge `9565cf2`.
 - Phase 3 baseline implementation commit: `efa7c3897da9dae06b64a734fd0e01305308819d` — `feat: implement destinations and tour discovery`. Push succeeded with matching local/remote feature branch hashes and upstream `origin/feat/phase-3-destinations-tours` verified. A documentation-only synchronization commit follows; use `git log -1` for the current documentation-inclusive HEAD.
 - Phase 3 review work: `ae2d69d` — `feat: center heroes and include multi-day accommodation`, following baseline synchronization commit `20dda34`. These verified refinements were committed/pushed on the Phase 3 branch and are included in merge `542bb2f`.
-- Phase 3 review: [PR #2](https://github.com/db2910/Amajo/pull/2) was merged by the user on 2026-11-05 at `542bb2f63df451a8c5dcc072b486588c70494bb0`; verified through authenticated GitHub tooling before Phase 4. Phase 4 commit/push/PR remain pending final verification.
+- Phase 3 review: [PR #2](https://github.com/db2910/Amajo/pull/2) was merged by the user on 2026-11-05 at `542bb2f63df451a8c5dcc072b486588c70494bb0`; verified through authenticated GitHub tooling before Phase 4.
+- Phase 4 implementation commit: `409d64d2aa8644aa2a2278b25ff18216f2aa95af` — `feat: implement public services and inquiry pages`. Push succeeded; local/remote hashes matched and upstream `origin/feat/phase-4-public-pages` was verified. A documentation-only synchronization commit follows; use `git log -1` for the current documentation-inclusive HEAD.
+- Phase 4 review: [PR #3](https://github.com/db2910/Amajo/pull/3), open against `main`, not merged. PR head and final local/remote synchronization are rechecked after the documentation commit. No force-push, history rewrite or automatic merge was used.
+- Phase 4 staged review: 38 intended files; zero credential-pattern matches or sensitive paths; staged whitespace check passed. Original Stitch references, approved assets, package manifest/lockfile and placeholder-only `.env.example` are unchanged. Secret/build/report/temp ignore rules verified. Documentation-only follow-up receives the same staged review.
 - Phase 3 pre-commit review: 42 intended files; zero credential-pattern matches and zero sensitive paths. Original Stitch references and package manifests/lockfile are unchanged. Dependencies, environment secrets, build output, temporary files and test reports remain ignored; `.env.example` remains tracked with placeholders only.
 - Standing workflow: after each verified phase, review staged content for secrets, update both progress documents, commit, push and verify. Use feature branches/reviewed PRs for substantial changes; never force-push, overwrite remote history or automatically merge a phase PR.
 
@@ -46,7 +49,7 @@ Updated: 2026-11-05 (Africa/Johannesburg).
 - Recorded the user's confirmed policy: all tours longer than one day include accommodation. Added a shared duration rule and consistent labels on homepage/catalog cards, trip summaries/sidebar, inclusions, overnight notes and FAQs across all nine concepts. Removed accommodation from exclusions. Property names, room categories and rates remain subject to the tailored quote; no booking is simulated.
 - Fixed a navigation accessibility finding exposed during regression: Radix's hidden keyboard focus proxy now has zero dimensions and no pointer target, while retaining Tab/Shift+Tab focus redirection. The targeted keyboard/menu/drawer axe check passes without disabling a rule or excluding elements.
 - Verification: `npm.cmd run typecheck`, production build (including final strict TypeScript), full ESLint plus final changed-file lint, and 39 unit tests passed. The final full Edge/Chromium suite passed all 41 tests in 2.5m on port 3100. It covers 360/390/768/1024/1440px plus the new 1920px hero checks, greeting controls/reduced motion, both hero images/composition, all nine accommodation pages, keyboard focus and tested axe A/AA scans. Screenshots at 360/1440/1920px were visually inspected. Early test measurement races were fixed with render/font readiness; the exposed navigation focus-proxy finding was corrected and keyboard-tested before the final passing run.
-- Changed modules: homepage/greeting, shared catalog hero/cards, tours page, trip detail, catalog fixture copy, new `src/features/catalog/accommodation.ts`, scoped focus-proxy CSS/header class, unit and browser checks, and both progress records/catalog/photo-credit docs. No packages or image assets added; original Stitch files are unchanged. Phase 4 remains unstarted.
+- Changed modules: homepage/greeting, shared catalog hero/cards, tours page, trip detail, catalog fixture copy, new `src/features/catalog/accommodation.ts`, scoped focus-proxy CSS/header class, unit and browser checks, and both progress records/catalog/photo-credit docs. No packages or image assets added; original Stitch files are unchanged. Phase 4 was unstarted at that review milestone.
 ## Phase 3 completed work — 2026-11-04
 
 - Added `/destinations`, shared country guides for Rwanda/Uganda/Kenya, 15 correctly associated attraction pages, `/tours`, nine detailed journey concepts and `/experiences`. Only the corresponding Phase 3 previews were replaced; Phase 4 pages remain clearly labelled previews.
@@ -173,7 +176,7 @@ Not performed: Firefox/Safari, screen-reader testing, full browser zoom, induced
 
 ## Exact next steps
 
-1. Review and accept the verified Phase 4 feature-branch PR against main; do not automatically merge it. Commit/push/PR synchronization is recorded in the GitHub section above after verification.
+1. Review and accept [Phase 4 PR #3](https://github.com/db2910/Amajo/pull/3) against main; do not automatically merge it. Commit/push/PR synchronization is recorded in the GitHub section above.
 2. Run `.\dev.cmd` on this feature branch and review `/services`, service details, `/about`, `/contact`, `/request-a-quote`, draft policies and confirmation guard. Existing catalog/homepage remain available.
 3. Review and accept the Phase 4 PR before starting Phase 5. Obtain an isolated Supabase development project and approved configuration for the next phase; no credentials belong in tracked files or documentation.
 4. Phase 5 connects published reads and durable inquiry intake/receipt state. Keep protected dashboards, CMS and notification delivery in their scheduled phases.
